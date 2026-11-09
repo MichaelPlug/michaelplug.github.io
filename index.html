@@ -1,3 +1,1127 @@
-<iframe width="100%" height="100%"
-src="https://www.youtube.com/embed/ae5UXhUtxao?autoplay=1&mute=0">
-</iframe>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michele Spina — Software Engineer</title>
+<meta name="description" content="Software Engineer in Rome building scalable backend services, enterprise data platforms and Web3 architectures with Go, Python and Solidity.">
+<meta name="theme-color" content="#15100d">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Michele Spina — Software Engineer">
+<meta property="og:description" content="Backend services, data platforms and Web3 architectures.">
+<meta property="og:url" content="https://michaelplug.github.io/">
+<meta property="og:image" content="https://michaelplug.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Michele Spina, Software Engineer, in neon lettering">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2315100d'/%3E%3Crect x='9' y='13' width='14' height='11' rx='3' fill='%23ffb347'/%3E%3Cpath d='M11.5 13V6M16 13V6M20.5 13V6' stroke='%23ffb347' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M16 24v4' stroke='%23e8804a' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+  /* A dark room in warm lamplight. Pulling the plug takes it to nearly black. */
+  :root {
+    color-scheme: dark;
+    --bg: #15100d;
+    --panel: #211915;
+    --nav: rgba(21, 16, 13, .9);
+    --ink: #f6ead9;
+    --bright: #fff6ea;
+    --dim: #bda996;
+    --unlit: #7a6858;
+    --accent: #ffb347;  /* anything you can interact with */
+    --brand: #e8804a;   /* brand moments */
+    --brass: #a67c3d;
+    --frame: #ead9bf;
+    --tint: rgba(246, 234, 217, .08);
+    --line: rgba(246, 234, 217, .13);
+    --line-strong: rgba(246, 234, 217, .28);
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --gutter: clamp(16px, 4vw, 40px);
+    --nav-h: 56px;
+  }
+  html.off {
+    --bg: #0c0907;
+    --panel: #16110e;
+    --nav: rgba(12, 9, 7, .9);
+    --ink: #e6d9c7;
+    --bright: #efe2d0;
+    --dim: #a8977f;
+    --unlit: #6f5e50;
+    --accent: #d99a45;
+    --brand: #c8744a;
+    --brass: #5f5042;
+    --frame: #3a2d24;
+    --tint: rgba(230, 217, 199, .07);
+    --line: rgba(230, 217, 199, .1);
+    --line-strong: rgba(230, 217, 199, .22);
+  }
+  html.switching, html.switching *, html.switching *::before { transition: background-color .35s, color .35s, border-color .35s, fill .35s, stroke .35s, opacity .35s, filter .35s !important; }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 17px/1.65 var(--sans);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+  ul, ol { list-style: none; }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  code { font: inherit; }
+  main { position: relative; }
+  svg { display: block; }
+  ::selection { background: var(--brand); color: var(--bg); }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: var(--gutter); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .icon { width: 24px; height: 24px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+  .skip {
+    position: absolute; left: 12px; top: -60px; z-index: 30;
+    padding: 8px 14px; background: var(--ink); color: var(--bg);
+    font: 700 14px var(--sans);
+  }
+  .skip:focus { top: 12px; }
+
+  /* nav */
+  .nav {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--nav);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: var(--nav-h); }
+  .brand { display: flex; align-items: center; gap: 8px; font: 600 18px var(--serif); color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .brand .icon { width: 20px; height: 20px; color: var(--accent); }
+  .nav ul { display: flex; gap: clamp(10px, 2.6vw, 28px); }
+  .nav li a { display: block; padding-block: 13px; font: 500 14px/18px var(--sans); color: var(--dim); text-decoration: none; transition: color .15s; }
+  .nav li a:hover, .nav li a.on { color: var(--accent); }
+
+  /* the room lights up as the plug goes in */
+  .dusk { position: fixed; inset: 0; z-index: 40; background: #060403; opacity: 0; pointer-events: none; animation: dusk .95s linear; }
+  @keyframes dusk {
+    0%, 26% { opacity: .7; }
+    30%, 40% { opacity: .2; }
+    44%, 56% { opacity: .55; }
+    64% { opacity: .12; }
+    100% { opacity: 0; }
+  }
+
+  /* backlit sign: the letters are there from the first frame, then the light behind them strikes */
+  .tube { --glow: 0 0 34px rgba(255, 165, 70, .34), 0 0 90px rgba(255, 150, 60, .18); }
+  .tube-ink { --sign: var(--bright); }
+  .tube-fire { --sign: var(--accent); }
+  .sign .ch {
+    color: var(--sign); text-shadow: var(--glow);
+    animation: strike .5s linear calc(var(--start, 0s) + var(--d, 0s)) backwards;
+  }
+  h1.sign { --start: .26s; }
+  #closing-sign { --start: .8s; }
+  .sign.wait .ch, html.off .sign .ch { animation: none; color: var(--unlit); text-shadow: none; }
+
+  /* the Italian three-pin plug: Spina is the name, and the sign needs power */
+  .pl { display: block; overflow: visible; fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px rgba(255, 170, 70, .22)); transition: stroke .2s, filter .2s; }
+  .pl-body { fill: var(--accent); }
+  .pl-socket { fill: var(--panel); stroke: var(--ink); }
+  .pl-move { transition: transform .2s ease-out; }
+  .pl-cable { transform-origin: 0 62px; transition: transform .2s ease-out; }
+  .plug { display: block; flex: none; margin-left: .05em; cursor: pointer; }
+  .plug:disabled { cursor: default; }
+  .plug .pl { width: 1.44em; height: .9em; }
+  .sign-line { display: flex !important; align-items: flex-end; }
+  h1.sign .pl-move { animation: plug-in .26s ease-in backwards; }
+  h1.sign .pl-cable { animation: cable-in .26s ease-in backwards; }
+  @keyframes plug-in { from { transform: translateX(-26px); } }
+  @keyframes cable-in { from { transform: scaleX(.705); } }
+  html.off h1.sign .pl-move { animation: none; transform: translateX(-26px); }
+  html.off h1.sign .pl-cable { animation: none; transform: scaleX(.705); }
+  html.off h1.sign .pl { stroke: var(--unlit); filter: none; }
+  html.off h1.sign .pl-body { fill: var(--unlit); }
+
+  /* the cable ends in a bulb: a lit bulb means an idea */
+  .bulb-row { display: flex; justify-content: center; margin-bottom: 18px; }
+  .bulb { display: block; width: 96px; height: 120px; overflow: visible; fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; transition: stroke .2s .42s; }
+  .bulb-cap { fill: var(--panel); stroke: var(--ink); }
+  .bulb-thread { stroke: var(--ink); stroke-width: 2; }
+  .bulb-glass { stroke: var(--ink); }
+  .bulb-glow { fill: #ffd98f; stroke: none; filter: drop-shadow(0 0 14px rgba(255, 190, 100, .55)) drop-shadow(0 0 44px rgba(255, 170, 70, .35)); animation: bulb-on .45s linear .42s backwards; }
+  .bulb-fil { stroke: var(--brand); stroke-width: 2.5; }
+  @keyframes bulb-on {
+    0%, 30% { opacity: 0; }
+    34%, 48% { opacity: 1; }
+    52%, 66% { opacity: .1; }
+    70%, 100% { opacity: 1; }
+  }
+  .contact.waiting .bulb, .contact.waiting .bulb-cap, .contact.waiting .bulb-thread, .contact.waiting .bulb-glass, .contact.waiting .bulb-fil,
+  html.off .bulb, html.off .bulb-cap, html.off .bulb-thread, html.off .bulb-glass, html.off .bulb-fil { stroke: var(--unlit); }
+  .contact.waiting .bulb-glow, html.off .bulb-glow { animation: none; opacity: 0; }
+
+  /* one string of festival lights down the page: each bulb turns on as the spark passes it */
+  .cable, .cable-corner, .cable-run { display: none; position: absolute; z-index: 1; pointer-events: none; }
+  main.wired .cable, main.wired .cable-corner, main.wired .cable-run { display: block; }
+  .cable {
+    width: 36px;
+    left: max(-10px, calc(max(0px, (100vw - 1120px) / 2) + var(--gutter) - 40px));
+    -webkit-mask-image: linear-gradient(transparent, #000 90px);
+    mask-image: linear-gradient(transparent, #000 90px);
+  }
+  .cable i { position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='320'%3E%3Cg stroke='%23574639' stroke-width='2'%3E%3Cpath d='M18 0C26 53 26 107 18 160S10 267 18 320' fill='none'/%3E%3Ccircle cx='18' cy='160' r='5' fill='%233a2d24'/%3E%3C/g%3E%3C/svg%3E") center bottom / 36px 320px repeat-y; }
+  .cable .cable-lit {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='320'%3E%3Ccircle cx='18' cy='160' r='16' fill='%23ffc861' fill-opacity='.16'/%3E%3Ccircle cx='18' cy='160' r='10' fill='%23ffc861' fill-opacity='.22'/%3E%3Cg fill='none'%3E%3Cpath d='M18 0C26 53 26 107 18 160S10 267 18 320' stroke='%23e8a23f' stroke-width='2'/%3E%3C/g%3E%3Ccircle cx='18' cy='160' r='5.5' fill='%23ffd98f' stroke='%23e8a23f' stroke-width='1.5'/%3E%3C/svg%3E");
+    clip-path: inset(0 0 calc(100% - var(--p, 0px)) 0);
+  }
+  html.off .cable-lit, html.off .cable-run::after { opacity: 0; }
+  html.off .cable-corner.on { border-color: #574639; }
+  .spark { position: absolute; z-index: 2; left: 0; top: 0; width: 180px; height: 180px; pointer-events: none; will-change: transform; }
+  .cable-corner { width: 20px; height: 20px; border-left: 2px solid #574639; border-bottom: 2px solid #574639; border-bottom-left-radius: 20px; transition: border-color .15s; }
+  .cable-corner.on { border-color: #e8a23f; }
+  .cable-run, .cable-run::after { height: 20px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='20'%3E%3Cpath d='M0 10C53 18 107 18 160 10S267 2 320 10' fill='none' stroke='%23574639' stroke-width='2'/%3E%3C/svg%3E") left center / var(--tile, 320px) 20px repeat-x; }
+  .cable-run::after {
+    content: ""; position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='20'%3E%3Cg fill='none'%3E%3Cpath d='M0 10C53 18 107 18 160 10S267 2 320 10' stroke='%23e8a23f' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+    clip-path: inset(0 100% 0 0); transition: clip-path .4s ease-out;
+  }
+  .cable-run.on::after { clip-path: inset(0); }
+  @keyframes strike {
+    0%, 24% { color: var(--unlit); text-shadow: none; }
+    26%, 40% { color: var(--sign); text-shadow: var(--glow); }
+    42%, 58% { color: var(--unlit); text-shadow: none; }
+    60%, 100% { color: var(--sign); text-shadow: var(--glow); }
+  }
+
+  /* hero */
+  .hero { position: relative; overflow: hidden; isolation: isolate; }
+  .hero::before {
+    content: ""; position: absolute; z-index: -2; inset: -20% -10% auto;
+    height: 90%;
+    background: radial-gradient(50% 62% at 26% 50%, rgba(255, 165, 85, .1), transparent 72%);
+    transition: opacity .25s;
+  }
+  html.off .hero::before { opacity: 0; }
+  .hero .wrap {
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: center; gap: clamp(32px, 5vw, 64px);
+    padding-block: clamp(56px, 8vw, 104px);
+  }
+  .kicker { font: 500 17px var(--sans); color: var(--dim); }
+  .kicker b { font-weight: 600; color: var(--ink); }
+
+  /* a framed portrait under its own picture light */
+  .portrait { position: relative; justify-self: center; width: min(100%, 360px); margin-top: 26px; }
+  .portrait::before {
+    content: ""; position: absolute; z-index: -1; inset: -80px -90px -60px;
+    background: radial-gradient(closest-side, rgba(255, 180, 95, .17), transparent);
+    transition: opacity .25s;
+  }
+  html.off .portrait::before { opacity: 0; }
+  .lamp { position: absolute; z-index: 1; left: 50%; top: -26px; width: 130px; height: 34px; margin-left: -65px; fill: var(--brass); stroke: var(--brass); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .print { padding: 14px; background: var(--frame); border-radius: 3px; box-shadow: 0 18px 44px rgba(0, 0, 0, .5); transform: rotate(1.4deg); }
+  .print img { display: block; width: 100%; height: auto; border-radius: 2px; transition: filter .25s; }
+  html.off .print img { filter: brightness(.38) saturate(.7); }
+  h1 {
+    margin-top: 16px;
+    font: 700 clamp(3.4rem, 10vw, 7rem)/.98 var(--serif);
+    letter-spacing: -.02em;
+  }
+  h1 > span { display: block; }
+  .gloss { margin-top: 16px; font-size: .98rem; color: var(--dim); }
+  .gloss b { font-weight: 500; color: var(--ink); }
+  .lede { margin-top: 16px; max-width: 24em; font-size: clamp(1.2rem, 2vw, 1.4rem); line-height: 1.45; }
+
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin-top: 30px; }
+  .btn {
+    display: inline-block; padding: 12px 20px;
+    font: 700 14px/20px var(--sans); text-decoration: none; color: var(--accent);
+    border: 1.5px solid var(--accent); border-radius: 999px;
+    transition: background .15s, color .15s, box-shadow .15s;
+    overflow-wrap: anywhere;
+  }
+  .btn[hidden] { display: none; }
+  .btn:hover { box-shadow: 0 0 18px rgba(255, 179, 71, .22); }
+  .btn.solid { background: var(--accent); color: var(--bg); }
+  .link { padding: 12px 6px; font: 500 14px/20px var(--sans); color: var(--dim); text-underline-offset: 4px; transition: color .15s; }
+  .link:hover { color: var(--accent); }
+
+  /* proof strip */
+  .proof { border-block: 1px solid var(--line); }
+  .proof dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding-block: clamp(22px, 3vw, 32px); }
+  .proof div { display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+  .proof dd { font: 600 clamp(1.25rem, 2.5vw, 1.75rem)/1.2 var(--serif); color: var(--bright); }
+  .proof dt { margin-top: 4px; font: 400 13.5px/1.4 var(--sans); color: var(--dim); }
+
+  /* sections */
+  section { padding-block: clamp(56px, 8vw, 96px); scroll-margin-top: var(--nav-h); }
+  section + section { border-top: 1px solid var(--line); }
+  h2 {
+    font: 600 clamp(2rem, 4.4vw, 3rem)/1.15 var(--serif);
+    letter-spacing: -.01em;
+    margin-bottom: clamp(28px, 4vw, 44px);
+    color: var(--bright);
+  }
+  .intro { margin: calc(clamp(28px, 4vw, 44px) * -1 + 10px) 0 clamp(28px, 4vw, 44px); max-width: 36em; font-size: 1.12rem; color: var(--dim); }
+
+  /* experience */
+  .job + .job { margin-top: clamp(64px, 9vw, 112px); }
+  .job-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 20px; }
+  h3 { font: 600 1.5rem/1.3 var(--serif); }
+  h3 .at { color: var(--brand); }
+  h3 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .when { font: 500 14px var(--sans); color: var(--dim); }
+  .job-lead { margin-top: 8px; color: var(--dim); max-width: 46em; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+  .tags li { padding: 3px 12px; font: 500 14px/1.6 var(--sans); color: var(--dim); background: var(--tint); border-radius: 999px; }
+
+  /* Moveax story: names stay pinned, each lights up with its chapter */
+  .story { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); margin-top: 40px; }
+  .rail { position: sticky; top: calc(var(--nav-h) + 40px); align-self: start; }
+  .rail a {
+    display: flex; align-items: center; gap: 12px; padding: 11px 0;
+    color: var(--dim); text-decoration: none; font-weight: 500; line-height: 1.3;
+    transition: color .25s;
+  }
+  .rail a:hover { color: var(--accent); }
+  .rail a.on { color: var(--bright); }
+  .rail .icon { transition: color .25s, filter .25s; }
+  .rail a.on .icon { color: var(--accent); }
+
+  .chapter { position: relative; min-height: min(50vh, 460px); padding-bottom: 48px; scroll-margin-top: calc(var(--nav-h) + 32px); transition: opacity .3s; }
+  /* a pool of lamplight follows whatever you're reading */
+  .chapter::before {
+    content: ""; position: absolute; z-index: -1; inset: -36px -48px 0;
+    background: radial-gradient(62% 72% at 34% 34%, rgba(255, 175, 90, .09), transparent 76%);
+    opacity: 0; transition: opacity .4s;
+  }
+  .story.live .chapter.on::before { opacity: 1; }
+  html.off .chapter::before { opacity: 0 !important; }
+  .chapter:last-child { min-height: 0; padding-bottom: 0; }
+  .story.live .chapter:not(.on) { opacity: .42; }
+  .chapter-head { display: flex; align-items: center; gap: 14px; }
+  .chapter-head .icon { width: 32px; height: 32px; color: var(--brand); }
+  h4 { font: 600 1.5rem/1.25 var(--serif); color: var(--bright); }
+  .chapter p, .project p { margin-top: 14px; max-width: 40em; }
+
+  /* diagrams: real text, connectors light up with the chapter */
+  .flow-fig { margin-top: 26px; }
+  .flow { display: flex; }
+  .flow li {
+    position: relative; flex: 1 1 0; min-width: 0; padding: 12px 10px;
+    font: 500 13px/1.4 var(--sans); text-align: center;
+    background: var(--panel); border: 1.5px solid var(--accent); border-radius: 16px;
+    transition: border-color .35s var(--t, 0s);
+  }
+  .flow small { display: block; margin-top: 3px; font: 400 12.5px/1.35 var(--sans); color: var(--dim); }
+  .flow li:nth-child(2) { --t: .18s; }
+  .flow li:nth-child(3) { --t: .36s; }
+  .flow li:nth-child(4) { --t: .54s; }
+  .flow.chain li + li { margin-left: 30px; }
+  .flow.chain li + li::before {
+    content: ""; position: absolute; left: -31px; top: 50%; width: 30px; height: 2px; margin-top: -1px;
+    background: var(--accent);
+    transform-origin: 0 50%; transition: transform .3s var(--t, 0s);
+  }
+  .flow.chain li + li::after {
+    content: ""; position: absolute; left: -8px; top: 50%; margin-top: -5px;
+    border-block: 5px solid transparent; border-left: 7px solid var(--accent);
+    transition: opacity .2s var(--t, 0s);
+  }
+  .flow.fan { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 14px; }
+  .flow.fan .base { grid-column: 1 / -1; }
+  .flow.fan li:not(.base)::before {
+    content: ""; position: absolute; left: 50%; top: 100%; width: 2px; height: 30px; margin-left: -1px;
+    background: var(--accent);
+    transform-origin: 50% 0; transition: transform .3s var(--t, 0s);
+  }
+  .story.live .chapter:not(.on) .flow li { border-color: var(--line-strong); }
+  .story.live .chapter:not(.on) .chain li::before { transform: scaleX(0); }
+  .story.live .chapter:not(.on) .chain li::after { opacity: 0; }
+  .story.live .chapter:not(.on) .fan li::before { transform: scaleY(0); }
+
+  /* CineDev: film credits that move with the page */
+  .film { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); margin-top: 40px; align-items: center; }
+  .credits { text-align: center; }
+  .credits.roll {
+    height: 340px; overflow: hidden;
+    -webkit-mask-image: linear-gradient(transparent, #000 20%, #000 80%, transparent);
+    mask-image: linear-gradient(transparent, #000 20%, #000 80%, transparent);
+  }
+  .credits-in { will-change: transform; }
+  .credits p { font: 500 12.5px/1.5 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+  .credits strong { display: block; margin-top: 4px; font: 600 1.6rem/1.3 var(--serif); color: var(--bright); }
+  .credits div div + div { margin-top: 34px; }
+  .project + .project { margin-top: 36px; padding-top: 36px; border-top: 1px solid var(--line); }
+  .project strong { color: var(--bright); font-weight: 700; }
+
+  /* skills */
+  .skills-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .skills-grid.live { grid-template-columns: minmax(0, 1fr) 290px; gap: clamp(32px, 5vw, 64px); }
+  .core { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .tile {
+    display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 72px; padding: 12px;
+    font: 700 1.05rem/1.2 var(--sans); color: var(--ink);
+    background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+    transition: color .15s, border-color .15s;
+  }
+  .tile svg { width: 26px; height: 26px; flex: none; fill: currentColor; }
+  .tile .go { width: 58px; height: 24px; }
+  .skill-row { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 8px 24px; padding-block: 20px; border-bottom: 1px solid var(--line); }
+  .skill-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .skill-row h3 { font: 500 1rem/1.35 var(--sans); color: var(--bright); padding-top: 5px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { display: inline-block; padding: 5px 14px; font: 500 14px/1.5 var(--sans); color: var(--ink); background: var(--tint); border: 1px solid transparent; border-radius: 999px; transition: color .15s, border-color .15s; }
+  button.chip:hover, button.tile:hover, .chip[aria-pressed="true"], .tile[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+  button.chip.peek, button.tile.peek { color: var(--accent); border-color: var(--accent); }
+
+  .used[hidden] { display: none; }
+  .used { position: sticky; top: calc(var(--nav-h) + 32px); align-self: start; padding: 18px 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; }
+  .used h3 { font: 500 13px/1.4 var(--sans); color: var(--dim); }
+  .used-read { min-height: 3em; margin-top: 8px; font-weight: 500; line-height: 1.5; }
+  .used ul { margin-top: 10px; }
+  .used li { display: flex; align-items: center; gap: 10px; padding: 6px 0; font-size: .92rem; line-height: 1.3; color: var(--dim); transition: color .15s; }
+  .used li .icon { width: 20px; height: 20px; transition: filter .15s; }
+  .used li.lit { color: var(--bright); }
+  .used li.lit .icon { color: var(--accent); }
+
+  /* papers */
+  .paper {
+    display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4px 24px; align-items: baseline;
+    padding: 24px 0; text-decoration: none; border-top: 1px solid var(--line);
+  }
+  .paper:last-child { border-bottom: 1px solid var(--line); }
+  .paper b { font: 600 clamp(1.8rem, 4vw, 2.4rem)/1.1 var(--serif); color: var(--bright); transition: color .15s; }
+  .paper h3 { font: 500 1.15rem/1.35 var(--sans); }
+  .paper span { display: block; margin-top: 4px; font: 500 14px var(--sans); color: var(--dim); }
+  .paper:hover b, .paper:hover h3 { color: var(--accent); }
+
+  /* about */
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: clamp(24px, 4vw, 48px); }
+  .facts h3 { font: 500 13px var(--sans); color: var(--dim); margin-bottom: 12px; }
+  .facts li + li { margin-top: 14px; }
+  .facts strong { display: block; font-weight: 500; }
+  .facts small { display: block; font: 400 13.5px/1.6 var(--sans); color: var(--dim); }
+
+  /* contact: the bulb lights the room */
+  .contact { position: relative; overflow: hidden; isolation: isolate; text-align: center; }
+  .contact::before {
+    content: ""; position: absolute; z-index: -1; inset: 0;
+    background: radial-gradient(70% 90% at 50% 20%, rgba(255, 175, 85, .2), transparent 76%);
+    transition: opacity .5s .55s;
+  }
+  .contact { transition: background-color .5s .55s; }
+  .contact.waiting { background-color: #0f0b09; }
+  .contact.waiting::before, html.off .contact::before { opacity: 0; }
+  html.off .contact.waiting { background-color: transparent; }
+  .contact h2 { margin-bottom: 20px; font-size: clamp(3rem, 10.5vw, 6.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; }
+  .contact p { max-width: 34em; margin-inline: auto; }
+  .aside { margin-top: clamp(28px, 4vw, 40px); max-width: 40em; color: var(--dim); }
+  .aside b { font-weight: 500; color: var(--ink); }
+  .contact p { color: var(--ink); }
+  .contact .actions { justify-content: center; }
+  footer { padding: 22px 0 30px; border-top: 1px solid var(--line); text-align: center; font: 400 13px var(--sans); color: var(--dim); }
+
+  @media (max-width: 900px) {
+    .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+    .story, .film { grid-template-columns: minmax(0, 1fr); }
+    .rail { display: none; }
+    .chapter { min-height: 0; }
+    .chapter::before { inset: -20px -16px 0; }
+    .story.live .chapter:not(.on) { opacity: 1; }
+    .story .chapter + .chapter { padding-top: 36px; border-top: 1px solid var(--line); }
+    .credits.roll { height: 230px; }
+    .skills-grid.live { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    .used {
+      position: sticky; top: auto; bottom: 0; z-index: 10;
+      margin-inline: calc(var(--gutter) * -1); padding: 10px var(--gutter);
+      background: var(--panel); border-width: 1px 0 0; border-radius: 0;
+    }
+    .used h3 { display: none; }
+    .used-read { min-height: 1.5em; margin-top: 0; font-size: .92rem; }
+    .used ul { display: flex; justify-content: space-between; margin-top: 4px; }
+    .used li .sr-sm { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .used li .icon { width: 24px; height: 24px; }
+  }
+  @media (max-width: 640px) {
+    .proof dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .flow.chain { flex-direction: column; }
+    .flow.chain li + li { margin: 26px 0 0; }
+    .flow.chain li + li::before { left: 50%; top: -27px; width: 2px; height: 26px; margin: 0 0 0 -1px; transform-origin: 50% 0; }
+    .flow.chain li + li::after { left: 50%; top: -8px; margin: 0 0 0 -5px; border-inline: 5px solid transparent; border-block: 7px solid transparent; border-top-color: var(--accent); border-bottom: 0; }
+    .story.live .chapter:not(.on) .chain li::before { transform: scaleY(0); }
+    .core { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .skill-row { grid-template-columns: minmax(0, 1fr); }
+    .skill-row h3 { padding-top: 0; }
+    .paper { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .brand { display: none; }
+    .nav .wrap { justify-content: center; }
+    .flow.fan { gap: 8px; }
+    .flow.fan li:not(.base) { grid-column: 1 / -1; }
+    .flow.fan li:not(.base)::before { content: none; }
+    .flow.fan .base { position: relative; margin-top: 22px; }
+    .flow.fan .base::before {
+      content: ""; position: absolute; left: 50%; top: -31px; width: 2px; height: 30px; margin-left: -1px;
+      background: var(--accent);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="dusk" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-plug" viewBox="0 0 24 24"><rect x="6" y="9" width="12" height="9" rx="2"/><path d="M8.5 9V3.5M12 9V3.5M15.5 9V3.5"/><path d="M12 18v3.5"/></symbol>
+  <symbol id="i-data" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/></symbol>
+  <symbol id="i-token" viewBox="0 0 24 24"><path d="m12 2.5 8.2 4.75v9.5L12 21.5l-8.2-4.75v-9.5z"/><path d="m12 8 3.5 2v4L12 16l-3.5-2v-4z"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 8a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2.5a1.5 1.5 0 0 0 0 3V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-2.5a1.5 1.5 0 0 0 0-3z"/><path d="M15 7.5v9" stroke-dasharray="1.5 2.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="16" r="4.5"/><path d="M11.2 12.8 20 4"/><path d="m16.5 7.5 3 3"/><path d="m13.8 10.2 2 2"/></symbol>
+  <symbol id="i-mac" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M9 20h6"/><path d="M12 16v4"/></symbol>
+  <symbol id="i-meta" viewBox="0 0 24 24"><path d="M3 12V5a2 2 0 0 1 2-2h7l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+</svg>
+
+<header class="nav">
+  <nav class="wrap" aria-label="Primary">
+    <a class="brand" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg>Michele Spina</a>
+    <ul>
+      <li><a href="#experience">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Papers</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <div class="cable" id="cable" aria-hidden="true"><i></i><i class="cable-lit"></i></div>
+  <canvas class="spark" id="spark" aria-hidden="true" hidden></canvas>
+  <div class="cable-corner" id="cable-corner" aria-hidden="true"></div>
+  <div class="cable-run" id="cable-run" aria-hidden="true"></div>
+
+  <div class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="kicker"><b>Software Engineer</b> · Rome</p>
+        <h1 class="sign" aria-label="Michele Spina">
+          <span class="tube tube-ink" aria-hidden="true"><span class="ch" style="--d:.1s">M</span><span class="ch" style="--d:.34s">i</span><span class="ch" style="--d:.05s">c</span><span class="ch" style="--d:.42s">h</span><span class="ch" style="--d:.2s">e</span><span class="ch" style="--d:0s">l</span><span class="ch" style="--d:.3s">e</span></span>
+          <span class="sign-line">
+            <span class="tube tube-fire" aria-hidden="true"><span class="ch" style="--d:.38s">S</span><span class="ch" style="--d:.15s">p</span><span class="ch" style="--d:.45s">i</span><span class="ch" style="--d:.08s">n</span><span class="ch" style="--d:.26s">a</span></span>
+            <button class="plug" id="plug" type="button" aria-label="Sign power" aria-pressed="true" disabled>
+              <svg class="pl" viewBox="0 0 160 100" aria-hidden="true">
+                <path class="pl-cable" d="M0 62C22 98 62 30 88 62"/>
+                <g class="pl-move"><rect class="pl-body" x="88" y="38" width="30" height="48" rx="7"/><path d="M118 48h28M118 62h28M118 76h28"/></g>
+                <rect class="pl-socket" x="126" y="26" width="30" height="72" rx="6"/>
+              </svg>
+            </button>
+          </span>
+        </h1>
+        <p class="gloss" id="gloss"><b>Spina</b> means plug in Italian. Hence MichaelPlug.</p>
+        <p class="lede">I build backends, data platforms and Web3 systems for environments that can't go down.</p>
+        <div class="actions">
+          <a class="btn solid" href="#experience">See my work</a>
+          <a class="btn" href="mailto:michelespina96@gmail.com">Email me</a>
+          <a class="link" href="https://github.com/MichaelPlug" rel="me">GitHub</a>
+        </div>
+      </div>
+
+      <figure class="portrait">
+        <svg class="lamp" viewBox="0 0 130 34" aria-hidden="true"><path d="M65 2v10" fill="none"/><path d="M8 30C20 14 44 12 65 12s45 2 57 18z"/></svg>
+        <div class="print"><img src="assets/michele.jpg" alt="Portrait of Michele Spina" width="720" height="720"></div>
+      </figure>
+    </div>
+  </div>
+
+  <div class="proof">
+    <dl class="wrap">
+      <div><dt>building software since 2021</dt><dd>5+ years</dd></div>
+      <div><dt>macOS apps for blockbuster studios</dt><dd>Marvel · Sony</dd></div>
+      <div><dt>at CAiSE 2024 and 2025</dt><dd>2 papers</dd></div>
+      <div><dt>MSc Computer Science, La Sapienza</dt><dd>110 cum laude</dd></div>
+    </dl>
+  </div>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="intro">The parts of a system people only notice when they stop working. That's where I've spent most of my time.</p>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Software Engineer <span class="at">@</span> <a href="https://moveax.it/en/">Moveax</a></h3>
+          <p class="when">Mar 2024 – Present · Rome</p>
+        </div>
+        <p class="job-lead">Engineering backend systems, data platforms and Web3 architectures using Hexagonal Architecture principles.</p>
+
+        <div class="story" id="story">
+          <nav class="rail" aria-label="Moveax projects">
+            <ol>
+              <li><a href="#p-data" class="on"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg>Data Lake &amp; Governance</a></li>
+              <li><a href="#p-token"><svg class="icon" aria-hidden="true"><use href="#i-token"/></svg>Asset Tokenization</a></li>
+              <li><a href="#p-transit"><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg>Transit Ticketing</a></li>
+              <li><a href="#p-energy"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>Energy Pipelines</a></li>
+              <li><a href="#p-access"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg>Web3 Access Control</a></li>
+            </ol>
+          </nav>
+
+          <div>
+            <div class="chapter on" id="p-data">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg><h4>Data Lake &amp; Governance</h4></div>
+              <p>Built Python (FastAPI) microservices over Iceberg, MinIO and PostgreSQL, with PySpark batch seeding for demo and dev data. Configured Trino for cross-catalog SQL with dynamic ABAC via OPA, plus OpenMetadata.</p>
+              <figure class="flow-fig">
+                <figcaption class="sr">Diagram: FastAPI microservices, Trino with OPA, and OpenMetadata all sit on top of Iceberg, MinIO and PostgreSQL.</figcaption>
+                <ul class="flow fan" aria-hidden="true">
+                  <li>FastAPI<small>microservices</small></li>
+                  <li>Trino + OPA<small>SQL · ABAC</small></li>
+                  <li>OpenMetadata<small>governance</small></li>
+                  <li class="base">Iceberg · MinIO · PostgreSQL</li>
+                </ul>
+              </figure>
+              <ul class="tags"><li>FastAPI</li><li>Iceberg</li><li>PySpark</li><li>Trino</li><li>OPA</li></ul>
+            </div>
+
+            <div class="chapter" id="p-token">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-token"/></svg><h4>Asset Tokenization</h4></div>
+              <p>Architected a Polygon tokenization system on OpenZeppelin standards like UUPS/Beacon proxies and T-Rex Factory. Integrated AWS KMS with Hardhat and handled Kafka event streams across services.</p>
+              <figure class="flow-fig">
+                <figcaption class="sr">Diagram: Hardhat with AWS KMS leads to UUPS and Beacon proxies on Polygon, then Kafka event streams, then services.</figcaption>
+                <ol class="flow chain" aria-hidden="true">
+                  <li>Hardhat<small>+ AWS KMS</small></li>
+                  <li>Polygon<small>UUPS/Beacon<br>T-Rex Factory</small></li>
+                  <li>Kafka<small>event streams</small></li>
+                  <li>Services<small>multi-service</small></li>
+                </ol>
+              </figure>
+              <ul class="tags"><li>Polygon</li><li>Hardhat</li><li>AWS KMS</li><li>Kafka</li></ul>
+            </div>
+
+            <div class="chapter" id="p-transit">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg><h4>Transit Ticketing</h4></div>
+              <p>Maintained Go backend services (GraphQL, gRPC/Protobuf) on Oracle DB. Built <code>dbt</code> models for daily sales analytics and managed backward-compatible DB migrations via ArgoCD.</p>
+              <ul class="tags"><li>Go</li><li>gRPC</li><li>GraphQL</li><li>dbt</li><li>ArgoCD</li></ul>
+            </div>
+
+            <div class="chapter" id="p-energy">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg><h4>Energy Pipelines</h4></div>
+              <p>Built automated energy consumption calculation pipelines using Dagster and PySpark for periodic processing.</p>
+              <ul class="tags"><li>Dagster</li><li>PySpark</li></ul>
+            </div>
+
+            <div class="chapter" id="p-access">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg><h4>Web3 Access Control</h4></div>
+              <p>Developed Solidity smart contracts on Polygon and client-side integrations with S3 and Web3 for decentralized access control.</p>
+              <ul class="tags"><li>Solidity</li><li>Polygon</li><li>S3</li></ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="job" id="film-job">
+        <div class="job-head">
+          <h3>Freelance Software Engineer <span class="at">@</span> CineDev</h3>
+          <p class="when">Jul 2021 – Feb 2024 · Remote</p>
+        </div>
+        <p class="job-lead">Engineered native macOS applications and data automation tools for major international film productions.</p>
+
+        <div class="film">
+          <div class="credits" id="credits" aria-hidden="true">
+            <div class="credits-in">
+              <div><p>Software by</p><strong>Michele Spina</strong></div>
+              <div><p>For the studios</p><strong>Marvel</strong><strong>Sony</strong></div>
+              <div><p>Native macOS apps</p><strong>Swift</strong><strong>Xcode</strong></div>
+              <div><p>Metadata pipelines</p><strong>Python</strong></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="project">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-mac"/></svg><h4>macOS Application Development</h4></div>
+              <p>Built and maintained native desktop applications using Swift, Xcode and Python, managing the full release lifecycle for blockbuster studios <strong>(Marvel, Sony)</strong>.</p>
+              <ul class="tags"><li>Swift</li><li>Xcode</li><li>Python</li></ul>
+            </div>
+            <div class="project">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-meta"/></svg><h4>Metadata Automation Pipelines</h4></div>
+              <p>Developed Python tools to extract, sanitize and format complex metadata into structured workflows for production teams.</p>
+              <ul class="tags"><li>Python</li></ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="intro">The tools I reach for, and where I've actually used them.</p>
+      <div class="skills-grid" id="skills-grid">
+        <div>
+          <div class="core">
+            <button class="tile" type="button" data-uses="data energy macos meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg>Python</button>
+            <button class="tile" type="button" data-uses="transit"><svg class="go" viewBox="0 7 24 10" aria-hidden="true"><path d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .058.035.035.07l-.199.303c-.023.036-.082.07-.117.07zM.047 11.306c-.047 0-.059-.023-.035-.058l.245-.316c.023-.035.082-.058.129-.058h5.328c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07zm2.828 1.075c-.047 0-.059-.035-.035-.07l.163-.292c.023-.035.07-.07.117-.07h2.337c.047 0 .07.035.07.082l-.023.28c0 .047-.047.082-.082.082zm12.129-2.36c-.736.187-1.239.327-1.963.514-.176.046-.187.058-.34-.117-.174-.199-.303-.327-.548-.444-.737-.362-1.45-.257-2.115.175-.795.514-1.204 1.274-1.192 2.22.011.935.654 1.706 1.577 1.835.795.105 1.46-.175 1.987-.77.105-.13.198-.27.315-.434H10.47c-.245 0-.304-.152-.222-.35.152-.362.432-.97.596-1.274a.315.315 0 01.292-.187h4.253c-.023.316-.023.631-.07.947a4.983 4.983 0 01-.958 2.29c-.841 1.11-1.94 1.8-3.33 1.986-1.145.152-2.209-.07-3.143-.77-.865-.655-1.356-1.52-1.484-2.595-.152-1.274.222-2.419.993-3.424.83-1.086 1.928-1.776 3.272-2.02 1.098-.2 2.15-.07 3.096.571.62.41 1.063.97 1.356 1.648.07.105.023.164-.117.2m3.868 6.461c-1.064-.024-2.034-.328-2.852-1.029a3.665 3.665 0 01-1.262-2.255c-.21-1.32.152-2.489.947-3.529.853-1.122 1.881-1.706 3.272-1.95 1.192-.21 2.314-.095 3.33.595.923.63 1.496 1.484 1.648 2.605.198 1.578-.257 2.863-1.344 3.962-.771.783-1.718 1.273-2.805 1.495-.315.06-.63.07-.934.106zm2.78-4.72c-.011-.153-.011-.27-.034-.387-.21-1.157-1.274-1.81-2.384-1.554-1.087.245-1.788.935-2.045 2.033-.21.912.234 1.835 1.075 2.21.643.28 1.285.244 1.905-.07.923-.48 1.425-1.228 1.484-2.233z"/></svg><span class="sr">Go</span></button>
+            <button class="tile" type="button" data-uses="macos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.508 0c-.287 0-.573 0-.86.002-.241.002-.483.003-.724.01-.132.003-.263.009-.395.015A9.154 9.154 0 0 0 4.348.15 5.492 5.492 0 0 0 2.85.645 5.04 5.04 0 0 0 .645 2.848c-.245.48-.4.972-.495 1.5-.093.52-.122 1.05-.136 1.576a35.2 35.2 0 0 0-.012.724C0 6.935 0 7.221 0 7.508v8.984c0 .287 0 .575.002.862.002.24.005.481.012.722.014.526.043 1.057.136 1.576.095.528.25 1.02.495 1.5a5.03 5.03 0 0 0 2.205 2.203c.48.244.97.4 1.498.495.52.093 1.05.124 1.576.138.241.007.483.009.724.01.287.002.573.002.86.002h8.984c.287 0 .573 0 .86-.002.241-.001.483-.003.724-.01a10.523 10.523 0 0 0 1.578-.138 5.322 5.322 0 0 0 1.498-.495 5.035 5.035 0 0 0 2.203-2.203c.245-.48.4-.972.495-1.5.093-.52.124-1.05.138-1.576.007-.241.009-.481.01-.722.002-.287.002-.575.002-.862V7.508c0-.287 0-.573-.002-.86a33.662 33.662 0 0 0-.01-.724 10.5 10.5 0 0 0-.138-1.576 5.328 5.328 0 0 0-.495-1.5A5.039 5.039 0 0 0 21.152.645 5.32 5.32 0 0 0 19.654.15a10.493 10.493 0 0 0-1.578-.138 34.98 34.98 0 0 0-.722-.01C17.067 0 16.779 0 16.492 0H7.508zm6.035 3.41c4.114 2.47 6.545 7.162 5.549 11.131-.024.093-.05.181-.076.272l.002.001c2.062 2.538 1.5 5.258 1.236 4.745-1.072-2.086-3.066-1.568-4.088-1.043a6.803 6.803 0 0 1-.281.158l-.02.012-.002.002c-2.115 1.123-4.957 1.205-7.812-.022a12.568 12.568 0 0 1-5.64-4.838c.649.48 1.35.902 2.097 1.252 3.019 1.414 6.051 1.311 8.197-.002C9.651 12.73 7.101 9.67 5.146 7.191a10.628 10.628 0 0 1-1.005-1.384c2.34 2.142 6.038 4.83 7.365 5.576C8.69 8.408 6.208 4.743 6.324 4.86c4.436 4.47 8.528 6.996 8.528 6.996.154.085.27.154.36.213.085-.215.16-.437.224-.668.708-2.588-.09-5.548-1.893-7.992z"/></svg>Swift</button>
+            <div class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg>TypeScript</div>
+          </div>
+
+          <div class="skill-row">
+            <h3>Backend &amp; Architecture</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="data token transit energy access">Hexagonal Architecture</button>
+              <button class="chip" type="button" data-uses="data">FastAPI</button>
+              <button class="chip" type="button" data-uses="transit">gRPC</button>
+              <button class="chip" type="button" data-uses="transit">GraphQL</button>
+              <span class="chip">Apollo Gateway</span>
+              <button class="chip" type="button" data-uses="data token">Microservices</button>
+            </div>
+          </div>
+          <div class="skill-row">
+            <h3>Data Engineering &amp; Governance</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="data energy">PySpark</button>
+              <button class="chip" type="button" data-uses="data">Apache Iceberg</button>
+              <button class="chip" type="button" data-uses="data">Trino</button>
+              <button class="chip" type="button" data-uses="energy">Dagster</button>
+              <button class="chip" type="button" data-uses="transit">dbt</button>
+              <button class="chip" type="button" data-uses="data">OPA</button>
+              <button class="chip" type="button" data-uses="data">OpenMetadata</button>
+            </div>
+          </div>
+          <div class="skill-row">
+            <h3>Distributed Systems &amp; Web3</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="token access">Polygon</button>
+              <button class="chip" type="button" data-uses="token">Hardhat</button>
+              <button class="chip" type="button" data-uses="token">Apache Kafka</button>
+              <button class="chip" type="button" data-uses="token">AWS KMS</button>
+              <button class="chip" type="button" data-uses="access">Solidity</button>
+            </div>
+          </div>
+          <div class="skill-row">
+            <h3>Databases &amp; Tools</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="data">PostgreSQL</button>
+              <button class="chip" type="button" data-uses="transit">Oracle DB</button>
+              <button class="chip" type="button" data-uses="data">MinIO</button>
+              <button class="chip" type="button" data-uses="access">AWS S3</button>
+              <button class="chip" type="button" data-uses="transit">ArgoCD</button>
+              <button class="chip" type="button" data-uses="macos">Xcode</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="used" id="used" aria-label="Projects using the selected skill" hidden>
+          <h3>where I used it</h3>
+          <p class="used-read" id="used-read" aria-live="polite"></p>
+          <ul>
+            <li data-p="data"><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg><span class="sr-sm">Data Lake &amp; Governance</span></li>
+            <li data-p="token"><svg class="icon" aria-hidden="true"><use href="#i-token"/></svg><span class="sr-sm">Asset Tokenization</span></li>
+            <li data-p="transit"><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg><span class="sr-sm">Transit Ticketing</span></li>
+            <li data-p="energy"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg><span class="sr-sm">Energy Pipelines</span></li>
+            <li data-p="access"><svg class="icon" aria-hidden="true"><use href="#i-key"/></svg><span class="sr-sm">Web3 Access Control</span></li>
+            <li data-p="macos"><svg class="icon" aria-hidden="true"><use href="#i-mac"/></svg><span class="sr-sm">macOS Applications</span></li>
+            <li data-p="meta"><svg class="icon" aria-hidden="true"><use href="#i-meta"/></svg><span class="sr-sm">Metadata Pipelines</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="wrap">
+      <h2>Publications</h2>
+      <p class="intro">Two papers on sharing confidential data over public blockchains, published at CAiSE.</p>
+      <div>
+        <a class="paper" href="https://arxiv.org/abs/2407.10684">
+          <b>MARTSIA</b>
+          <div>
+            <h3>A Tool for Confidential Data Exchange via Public Blockchain</h3>
+            <span>CAiSE 2025 · arXiv:2407.10684</span>
+          </div>
+        </a>
+        <a class="paper" href="https://arxiv.org/abs/2405.04152">
+          <b>CAKE</b>
+          <div>
+            <h3>Sharing Slices of Confidential Data on Blockchain</h3>
+            <span>CAiSE 2024 · arXiv:2405.04152</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p class="intro">Outside of code, I spent eight years at S. Frumenzio planning games and reflective activities for young people aged 9 to 18, as part of a team of peers.</p>
+      <div class="facts">
+        <div>
+          <h3>education</h3>
+          <ul>
+            <li><strong>Master's Degree, Computer Science</strong><small>La Sapienza, Rome · 2021–2024</small><small>110 cum laude/110</small></li>
+            <li><strong>Bachelor's Degree, Computer Science</strong><small>La Sapienza, Rome · 2017–2021</small></li>
+          </ul>
+        </div>
+        <div>
+          <h3>certification</h3>
+          <ul>
+            <li><strong>AWS Academy Graduate</strong><small>AWS Academy Cloud Foundations</small><small>Jul 2023</small></li>
+          </ul>
+        </div>
+        <div>
+          <h3>languages</h3>
+          <ul>
+            <li><strong>Italian</strong><small>Native</small></li>
+            <li><strong>English</strong><small>B1+</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="bulb-row" aria-hidden="true">
+        <svg class="bulb" viewBox="0 0 120 150">
+          <path d="M0 10H44Q60 10 60 26V34"/>
+          <path class="bulb-glow" d="M48 56C48 66 26 72 26 98a34 34 0 0 0 68 0C94 72 72 66 72 56z"/>
+          <path class="bulb-glass" d="M48 56C48 66 26 72 26 98a34 34 0 0 0 68 0C94 72 72 66 72 56z"/>
+          <path class="bulb-fil" d="M52 62V84l-6 12 7 8 7-10 7 10 7-8-6-12V62"/>
+          <rect class="bulb-cap" x="48" y="34" width="24" height="22" rx="3"/>
+          <path class="bulb-thread" d="M48 41h24M48 48h24"/>
+        </svg>
+      </div>
+      <h2 class="sign" id="closing-sign" aria-label="Got an idea?">
+        <span class="tube tube-ink" aria-hidden="true"><span class="ch" style="--d:.12s">G</span><span class="ch" style="--d:.34s">o</span><span class="ch" style="--d:.03s">t</span> <span class="ch" style="--d:.42s">a</span><span class="ch" style="--d:.2s">n</span></span>
+        <span class="tube tube-fire" aria-hidden="true"><span class="ch" style="--d:.28s">i</span><span class="ch" style="--d:.08s">d</span><span class="ch" style="--d:.45s">e</span><span class="ch" style="--d:.16s">a</span><span class="ch" style="--d:.38s">?</span></span>
+      </h2>
+      <p id="closing-line">Shameless plug: tell me about it, and I'll make it real. Email is the quickest way to reach me.</p>
+      <div class="actions">
+        <button class="btn solid" id="replug" type="button" hidden>Plug it back in</button>
+        <a class="btn solid" href="mailto:michelespina96@gmail.com">michelespina96@gmail.com</a>
+        <a class="btn" href="https://github.com/MichaelPlug" rel="me">github.com/MichaelPlug</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Michele Spina · Software Engineer · Rome</div></footer>
+
+<script>
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  // Runs a callback for whichever element crosses the middle of the screen.
+  var middle = { rootMargin: '-45% 0px -50% 0px' };
+
+  // Active nav link. The last section can be too short to reach mid-screen,
+  // so it activates early and stays active through the end of the page.
+  var navLinks = $$('.nav li a');
+  var currentSection = null, contactOn = false;
+  function paintNav() {
+    var id = contactOn ? 'contact' : currentSection;
+    navLinks.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + id); });
+  }
+  var navIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) currentSection = e.target.id;
+      else if (currentSection === e.target.id) currentSection = null;
+    });
+    paintNav();
+  }, middle);
+  $$('main section:not(#contact)').forEach(function (s) { navIO.observe(s); });
+  new IntersectionObserver(function (entries) {
+    contactOn = entries[0].isIntersecting;
+    paintNav();
+  }, { rootMargin: '0px 0px -35% 0px' }).observe($('#contact'));
+
+  // Moveax story: light the chapter in the middle of the screen.
+  var story = $('#story');
+  var chapters = $$('.chapter', story);
+  story.classList.add('live');
+  var storyIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      chapters.forEach(function (c) { c.classList.toggle('on', c === e.target); });
+      $$('.rail a', story).forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id); });
+    });
+  }, middle);
+  chapters.forEach(function (c) { storyIO.observe(c); });
+
+  // Rail links center their chapter, so it is the one that lights up on any screen height.
+  $$('.rail a', story).forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      $(a.getAttribute('href')).scrollIntoView({ block: 'center' });
+    });
+  });
+
+  // Skills: show which projects used a skill.
+  var grid = $('#skills-grid'), used = $('#used'), read = $('#used-read');
+  var items = $$('li', used);
+  var hint = canHover ? 'Hover a skill to see the projects behind it.' : 'Tap a skill to see the projects behind it.';
+  var pinned = null;
+  used.hidden = false;
+  grid.classList.add('live');
+  read.textContent = hint;
+
+  function show(btn) {
+    var ids = btn ? btn.dataset.uses.split(' ') : [];
+    items.forEach(function (li) { li.classList.toggle('lit', ids.indexOf(li.dataset.p) > -1); });
+    if (!btn) { read.textContent = hint; return; }
+    var names = items.filter(function (li) { return li.classList.contains('lit'); }).map(function (li) { return li.textContent; });
+    read.textContent = btn.textContent.trim() + ': ' + names.join(', ');
+  }
+  $$('[data-uses]', grid).forEach(function (btn) {
+    btn.setAttribute('aria-pressed', 'false');
+    btn.addEventListener('click', function () {
+      if (pinned) pinned.setAttribute('aria-pressed', 'false');
+      pinned = pinned === btn ? null : btn;
+      if (pinned) pinned.setAttribute('aria-pressed', 'true');
+      show(pinned);
+    });
+    btn.addEventListener('focus', function () { if (!pinned) show(btn); });
+    btn.addEventListener('blur', function () { if (!pinned) show(null); });
+    if (canHover) {
+      btn.addEventListener('pointerenter', function () { btn.classList.add('peek'); show(btn); });
+      btn.addEventListener('pointerleave', function () { btn.classList.remove('peek'); show(pinned); });
+    }
+  });
+
+  // The plug runs the whole room: pull it and every light on the page goes out.
+  var root = document.documentElement, plugBtn = $('#plug'), gloss = $('#gloss');
+  var closingLine = $('#closing-line'), replug = $('#replug');
+  var glossOn = gloss.innerHTML, closingOn = closingLine.textContent, switchTimer;
+  function powerIsOff() { return root.classList.contains('off'); }
+  function setPower(on) {
+    if (!reduce) {
+      root.classList.add('switching');
+      clearTimeout(switchTimer);
+      switchTimer = setTimeout(function () { root.classList.remove('switching'); }, 400);
+    }
+    root.classList.toggle('off', !on);
+    plugBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    plugBtn.title = on ? 'Pull the plug' : 'Plug it back in';
+    if (on) gloss.innerHTML = glossOn;
+    else gloss.textContent = 'Michele Spina, unplugged.';
+    closingLine.textContent = on ? closingOn : 'Someone pulled the plug. Plug me back in first, then tell me all about it.';
+    replug.hidden = on;
+  }
+  plugBtn.disabled = false;
+  plugBtn.title = 'Pull the plug';
+  plugBtn.addEventListener('click', function () { setPower(powerIsOff()); });
+  replug.addEventListener('click', function () { setPower(true); });
+
+  // One cable from the top of the page to the bulb above the closing line.
+  var mainEl = $('#main'), cable = $('#cable'), corner = $('#cable-corner'), cableRun = $('#cable-run');
+  var contactEl = $('#contact'), closing = $('#closing-sign'), bulb = $('.bulb');
+  var wire = { docTop: 0, h: 0, top: 0, cx: 0, runY: 0, runFrom: 0, runTo: 0 };
+  mainEl.classList.add('wired');
+
+  function layoutCable() {
+    var m = mainEl.getBoundingClientRect(), start = $('.proof').getBoundingClientRect(), s = bulb.getBoundingClientRect();
+    var cx = cable.offsetLeft + 18, y = s.top - m.top + s.height * (10 / 150);
+    var top = start.top - m.top;
+    wire.docTop = start.top + scrollY;
+    wire.h = y - 19 - top;
+    cable.style.top = top + 'px';
+    cable.style.height = wire.h + 'px';
+    corner.style.left = (cx - 1) + 'px';
+    corner.style.top = (y - 19) + 'px';
+    cableRun.style.left = (cx + 19) + 'px';
+    cableRun.style.top = (y - 10) + 'px';
+    var runW = Math.max(0, s.left - m.left - (cx + 19));
+    cableRun.style.width = runW + 'px';
+    // Whole wave periods only, so the wave meets the bulb's wire dead level.
+    cableRun.style.setProperty('--tile', (runW / Math.max(1, Math.round(runW / 320))) + 'px');
+    wire.top = top;
+    wire.cx = cx;
+    wire.runY = y;
+    wire.runFrom = cx + 19;
+    wire.runTo = cx + 19 + runW;
+    if (reduce) cable.style.setProperty('--p', wire.h + 'px');
+  }
+  layoutCable();
+
+  if (reduce) {
+    corner.classList.add('on');
+    cableRun.classList.add('on');
+    new ResizeObserver(layoutCable).observe(mainEl);
+    return;
+  }
+
+  // The bulb and closing sign wait for the cable to arrive.
+  var plugged = false;
+  closing.classList.add('wait');
+  contactEl.classList.add('waiting');
+  function plugContact() {
+    plugged = true;
+    travel = { start: performance.now() };
+    front.on = true;
+    energy = 1;
+    corner.classList.add('on');
+    cableRun.classList.add('on');
+    contactEl.classList.remove('waiting');
+    closing.classList.remove('wait');
+  }
+
+  // The spark at the front of the cable. It redraws in steps, like real arcing:
+  // a quiet crackle while you read, a flare when you scroll.
+  var spark = $('#spark'), sc = spark.getContext('2d');
+  var SIZE = 180, MID = SIZE / 2, ratio = Math.min(devicePixelRatio || 1, 2);
+  var front = { x: 0, y: 0, on: false }, travel = null, energy = 0, lastLit = null;
+  var embers = [], nextCrackle = 0, lastDraw = 0;
+  spark.width = spark.height = SIZE * ratio;
+  sc.scale(ratio, ratio);
+  sc.lineCap = 'round';
+  sc.lineJoin = 'round';
+  spark.hidden = false;
+
+  function moveSpark(x, y) {
+    front.x = x;
+    front.y = y;
+    spark.style.transform = 'translate3d(' + (x - MID).toFixed(1) + 'px,' + (y - MID).toFixed(1) + 'px,0)';
+  }
+
+  // Where the wavy cable sits at a given length: the same curve as the cable image.
+  function waveOffset(lit) {
+    var tileY = (320 - (wire.h - lit) % 320) % 320;
+    var firstHalf = tileY < 160;
+    var t = (firstHalf ? tileY : tileY - 160) / 160;
+    return (firstHalf ? 1 : -1) * 24 * t * (1 - t);
+  }
+
+  function arc(length) {
+    var angle = (Math.random() < .5 ? 0 : Math.PI) + (Math.random() - .5) * 1.7;
+    var dx = Math.cos(angle), dy = Math.sin(angle), path = new Path2D();
+    var steps = 3 + Math.floor(Math.random() * 3);
+    path.moveTo(MID, MID);
+    for (var i = 1; i <= steps; i++) {
+      var t = i / steps, jitter = (Math.random() - .5) * length * .42;
+      var x = MID + dx * length * t - dy * jitter, y = MID + dy * length * t + dx * jitter;
+      path.lineTo(x, y);
+      if (i < steps && Math.random() < .3) {
+        var fork = length * .3, forkAngle = angle + (Math.random() - .5) * 2.2;
+        path.lineTo(x + Math.cos(forkAngle) * fork, y + Math.sin(forkAngle) * fork);
+        path.moveTo(x, y);
+      }
+    }
+    sc.strokeStyle = 'rgba(255, 170, 60, .35)';
+    sc.lineWidth = 3.5;
+    sc.stroke(path);
+    sc.strokeStyle = '#ffe7b0';
+    sc.lineWidth = 1.2;
+    sc.stroke(path);
+  }
+
+  function drawSpark(now) {
+    requestAnimationFrame(drawSpark);
+    var dt = now - lastDraw;
+    if (dt < 45) return;
+    lastDraw = now;
+    sc.clearRect(0, 0, SIZE, SIZE);
+
+    if (travel) {
+      var p = (now - travel.start) / 400;
+      if (p >= 1) { travel = null; front.on = false; }
+      else moveSpark(wire.runFrom + (wire.runTo - wire.runFrom) * p, wire.runY);
+    }
+    if (!front.on || powerIsOff()) { embers.length = 0; return; }
+
+    energy *= .82;
+    if (now > nextCrackle) {
+      energy = Math.max(energy, .4 + Math.random() * .25);
+      nextCrackle = now + 700 + Math.random() * 1800;
+    }
+    var reach = front.x < 40 ? 12 : 58;  // phones: stay in the margin, clear of the text
+
+    var radius = 12 + energy * 26;
+    var halo = sc.createRadialGradient(MID, MID, 0, MID, MID, radius);
+    halo.addColorStop(0, 'rgba(255, 244, 200, 1)');
+    halo.addColorStop(.35, 'rgba(255, 170, 60, .5)');
+    halo.addColorStop(1, 'rgba(240, 110, 30, 0)');
+    sc.globalAlpha = .7 + Math.random() * .3;
+    sc.fillStyle = halo;
+    sc.beginPath();
+    sc.arc(MID, MID, radius, 0, Math.PI * 2);
+    sc.fill();
+    sc.globalAlpha = 1;
+
+    if (energy > .12) {
+      var arcs = 2 + Math.round(energy * 5);
+      for (var i = 0; i < arcs; i++) arc(8 + Math.random() * reach * (.4 + .6 * energy));
+    }
+
+    if (energy > .3 && Math.random() < energy && embers.length < 24) {
+      embers.push({ x: front.x, y: front.y, vx: (Math.random() - .5) * .22, vy: -.12 - Math.random() * .12, life: 1 });
+    }
+    sc.strokeStyle = '#ffb347';
+    sc.lineWidth = 1.4;
+    embers = embers.filter(function (e) {
+      e.vy += .0007 * dt;
+      e.x += e.vx * dt;
+      e.y += e.vy * dt;
+      e.life -= dt / 420;
+      if (e.life <= 0) return false;
+      var ex = e.x - front.x + MID, ey = e.y - front.y + MID;
+      sc.globalAlpha = e.life;
+      sc.beginPath();
+      sc.moveTo(ex, ey);
+      sc.lineTo(ex - e.vx * 20, ey - e.vy * 20);
+      sc.stroke();
+      return true;
+    });
+    sc.globalAlpha = 1;
+  }
+  requestAnimationFrame(drawSpark);
+
+  // Scroll-linked: the film credits roll and the cable lights up.
+  var credits = $('#credits'), inner = $('.credits-in', credits), filmJob = $('#film-job');
+  credits.classList.add('roll');
+
+  var queued = false;
+  function frame() {
+    queued = false;
+    var vh = innerHeight, r = filmJob.getBoundingClientRect();
+    if (r.bottom > 0 && r.top < vh) {
+      var p = Math.min(Math.max((vh - r.top) / (vh + r.height), 0), 1);
+      var win = credits.clientHeight;
+      var from = win * .35, to = win * .65 - inner.offsetHeight;
+      inner.style.transform = 'translateY(' + (from + (to - from) * p).toFixed(1) + 'px)';
+    }
+
+    var lit = Math.min(Math.max(scrollY + vh * .6 - wire.docTop, 0), wire.h);
+    cable.style.setProperty('--p', lit.toFixed(1) + 'px');
+    if (lastLit !== null) energy = Math.min(1, energy + Math.abs(lit - lastLit) / 160);
+    lastLit = lit;
+    if (!travel) {
+      front.on = lit > 0 && lit < wire.h - 1;
+      if (front.on) moveSpark(wire.cx + waveOffset(lit), wire.top + lit);
+    }
+    if (!plugged && (lit >= wire.h - 1 || scrollY + vh >= document.documentElement.scrollHeight - 2)) plugContact();
+  }
+  function queue() { if (!queued) { queued = true; requestAnimationFrame(frame); } }
+  addEventListener('scroll', queue, { passive: true });
+  addEventListener('resize', queue, { passive: true });
+  new ResizeObserver(function () { layoutCable(); queue(); }).observe(mainEl);
+  frame();
+})();
+</script>
+</body>
+</html>
