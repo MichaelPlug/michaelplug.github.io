@@ -786,9 +786,14 @@ footer { padding: 22px 0 30px; border-top: 1px solid var(--line); text-align: ce
   .tile:nth-child(n+4) { grid-column: span 3; }
 }
 @media (max-width: 900px) {
-  /* phones: the portrait shrinks to a badge above the name so name, pitch and proof share the first screen */
-  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 32px 40px; }
-  .portrait { order: -1; justify-self: start; width: 96px; }
+  /* phones: the portrait becomes a badge beside the name, so it costs no row of its own
+     and name, pitch and proof share the first screen */
+  .hero .wrap { grid-template-columns: minmax(0, 1fr) auto; gap: 0 14px; padding-block: 24px 36px; }
+  .hero .wrap > div { display: contents; }
+  .hero .wrap > div > * { grid-column: 1 / -1; }
+  .hero .wrap > div > .kicker { grid-area: 1 / 1; align-self: end; }
+  .hero .wrap > div > h1 { grid-area: 2 / 1; }
+  .portrait { grid-area: 1 / 2 / 3 / 3; align-self: center; width: clamp(76px, 22vw, 150px); }
   .portrait::before { inset: -40px; }
   .print { box-shadow: 0 8px 24px rgba(0, 0, 0, .45); }
   .story { grid-template-columns: minmax(0, 1fr); }
@@ -813,6 +818,12 @@ footer { padding: 22px 0 30px; border-top: 1px solid var(--line); text-align: ce
   .used-more { display: none; }
 }
 @media (max-width: 640px) {
+  /* desktop-sized breathing room reads as empty screens on a phone */
+  section { padding-block: 44px; }
+  h2 { margin-bottom: 22px; }
+  .intro { margin: -12px 0 22px; }
+  .tile { min-height: 84px; padding: 10px 6px; }
+  .tile svg { width: 24px; height: 24px; margin-bottom: 2px; }
   .proof dl { gap: 12px; padding-block: 18px; }
   .proof dd { font-size: 1.15rem; }
   .proof dt { font-size: 12px; }
