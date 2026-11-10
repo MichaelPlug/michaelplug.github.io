@@ -804,15 +804,17 @@ footer { padding: 22px 0 30px; border-top: 1px solid var(--line); text-align: ce
   .story .chapter + .chapter { padding-top: 36px; border-top: 1px solid var(--line); }
   .vf { left: 0; right: 0; --l: 12px; }  /* the cable owns the left gutter */
   .skills-grid.live { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  /* a floating card inside the content column: the cable runs down the gutter beside it, never under it */
   .used {
-    position: sticky; top: auto; bottom: 0; z-index: 10;
-    margin-inline: calc(var(--gutter) * -1); padding: 10px var(--gutter);
-    background: var(--panel); border-width: 1px 0 0; border-radius: 0;
+    position: sticky; top: auto; bottom: 12px; z-index: 10;
+    padding: 10px 10px 6px;
+    background: var(--panel); border: 1px solid var(--line-strong); border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .55), 0 0 0 1px rgba(0, 0, 0, .3);
   }
   .used h3 { display: none; }
-  .used-read { min-height: 1.5em; margin-top: 0; font-size: .92rem; }
+  .used-read { min-height: 1.4em; margin: 0 4px; font-size: .85rem; line-height: 1.4; }
   .used ul { display: flex; justify-content: space-between; margin-top: 4px; }
-  .proj { width: auto; margin: 0; padding: 6px; }
+  .proj { width: auto; margin: 0; padding: 5px; }
   .proj .sr-sm { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .proj .icon { width: 24px; height: 24px; }
   .used-more { display: none; }
