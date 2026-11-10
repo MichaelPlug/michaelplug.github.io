@@ -3,6 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+// Readers whose browser prefers Italian get the Italian page, unless they already picked a language with the switch.
+(function () {
+  var want = null;
+  // The EN switch on the Italian page links here with ?lang=en: honor it, remember it, tidy the address.
+  if (/[?&]lang=en\b/.test(location.search)) {
+    want = 'en';
+    try { localStorage.setItem('lang', 'en'); } catch (e) {}
+    try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
+  }
+  if (!want) try { want = localStorage.getItem('lang'); } catch (e) {}
+  if (!want) {
+    var langs = navigator.languages || [navigator.language || ''];
+    for (var i = 0; i < langs.length && !want; i++) {
+      var l = String(langs[i]).slice(0, 2).toLowerCase();
+      if (l === 'it' || l === 'en') want = l;
+    }
+  }
+  if (want === 'it') location.replace('it/index.html' + location.hash);
+})();
+</script>
 <title>Michele Spina — Software Engineer</title>
 <meta name="description" content="Software Engineer in Rome building scalable backend services, enterprise data platforms and Web3 architectures with Go, Python and Solidity.">
 <meta name="theme-color" content="#101113">
@@ -26,27 +47,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,600..700,100&family=Figtree:wght@400;500;600;700&display=swap">
-<script>
-// Readers whose browser prefers Italian get the Italian page, unless they already picked a language with the switch.
-(function () {
-  var want = null;
-  // The EN switch on the Italian page links here with ?lang=en: honor it, remember it, tidy the address.
-  if (/[?&]lang=en\b/.test(location.search)) {
-    want = 'en';
-    try { localStorage.setItem('lang', 'en'); } catch (e) {}
-    try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) {}
-  }
-  if (!want) try { want = localStorage.getItem('lang'); } catch (e) {}
-  if (!want) {
-    var langs = navigator.languages || [navigator.language || ''];
-    for (var i = 0; i < langs.length && !want; i++) {
-      var l = String(langs[i]).slice(0, 2).toLowerCase();
-      if (l === 'it' || l === 'en') want = l;
-    }
-  }
-  if (want === 'it') location.replace('it/index.html' + location.hash);
-})();
-</script>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
