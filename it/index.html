@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michele Spina — Software Engineer</title>
+<meta name="description" content="Software Engineer a Roma: sviluppo servizi backend scalabili, piattaforme dati enterprise e architetture Web3 con Go, Python e Solidity.">
+<meta name="theme-color" content="#101113">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Michele Spina — Software Engineer">
+<meta property="og:description" content="Servizi backend, piattaforme dati e architetture Web3.">
+<meta property="og:url" content="https://michaelplug.github.io/it/">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="canonical" href="https://michaelplug.github.io/it/">
+<link rel="alternate" hreflang="en" href="https://michaelplug.github.io/">
+<link rel="alternate" hreflang="it" href="https://michaelplug.github.io/it/">
+<link rel="alternate" hreflang="x-default" href="https://michaelplug.github.io/">
+<meta property="og:image" content="https://michaelplug.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Michele Spina, Software Engineer, in lettere illuminate, con una spina in stile cartoon">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 23v1c0 2.6 2 4 5.6 4' stroke='%2324170a' stroke-width='5.2'/%3E%3Cpath d='M16 23v1c0 2.6 2 4 5.6 4' stroke='%23ffb347' stroke-width='2.4'/%3E%3Cpath d='M11 3.5v5.5M16 3.5v5.5M21 3.5v5.5' stroke='%2324170a' stroke-width='5.2'/%3E%3Cpath d='M11 3.5v5.5M16 3.5v5.5M21 3.5v5.5' stroke='%23efe8de' stroke-width='2.4'/%3E%3Cpath d='M6.5 8.6h19v6a9.5 9.5 0 0 1-19 0z' fill='%23ffb347' stroke='%2324170a' stroke-width='2'/%3E%3Ccircle cx='13.1' cy='13.6' r='1.6' fill='%2324170a'/%3E%3Ccircle cx='18.9' cy='13.6' r='1.6' fill='%2324170a'/%3E%3Cpath d='M13.7 17.4q2.3 1.9 4.6 0' stroke='%2324170a' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+<div class="dusk" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M8.3 2.6v4.2M12 2.6v4.2M15.7 2.6v4.2" stroke="#efe8de" stroke-width="2.3"/><path d="M12 17.4v.8c0 2.1 1.6 3.3 4.6 3.3" stroke="#ffb347" stroke-width="2.2"/><path d="M5.3 6.6h13.4v4.6a6.7 6.7 0 0 1-13.4 0z" fill="#ffb347" stroke="none"/><circle cx="9.9" cy="10.4" r="1.15" fill="#24170a" stroke="none"/><circle cx="14.1" cy="10.4" r="1.15" fill="#24170a" stroke="none"/><path d="M10.4 13.2q1.6 1.4 3.2 0" stroke="#24170a" stroke-width="1.2"/></symbol>
+  <symbol id="i-data" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3.5 3.5v17h17"/><path d="m7.5 15 4-5 3 3 5-6.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-tree" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1.2"/><rect x="3" y="16" width="6" height="5" rx="1.2"/><rect x="15" y="16" width="6" height="5" rx="1.2"/><path d="M12 8v4M6 16v-4h12v4"/></symbol>
+  <symbol id="i-token" viewBox="0 0 24 24"><path d="m12 2.5 8.2 4.75v9.5L12 21.5l-8.2-4.75v-9.5z"/><path d="m12 8 3.5 2v4L12 16l-3.5-2v-4z"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 8a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2.5a1.5 1.5 0 0 0 0 3V16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-2.5a1.5 1.5 0 0 0 0-3z"/><path d="M15 7.5v9" stroke-dasharray="1.5 2.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6z"/></symbol>
+  <symbol id="i-synth" viewBox="0 0 24 24"><ellipse cx="6.5" cy="8" rx="3.5" ry="1.5"/><path d="M3 8v8c0 .8 1.6 1.5 3.5 1.5S10 16.8 10 16V8"/><g stroke-dasharray="1.6 1.9"><ellipse cx="17.5" cy="8" rx="3.5" ry="1.5"/><path d="M14 8v8c0 .8 1.6 1.5 3.5 1.5S21 16.8 21 16V8"/></g><path d="M10.8 12h2.4M12 10.8l1.2 1.2-1.2 1.2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><circle cx="6.5" cy="6.5" r="3"/><circle cx="12.5" cy="6.5" r="3"/><rect x="3" y="10.5" width="12" height="9" rx="1.5"/><path d="m15 13.5 5.5-3v9l-5.5-3"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c.9-3.9 3.7-6 7-6s6.1 2.1 7 6"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 9.5 12 4l9 5.5"/><path d="M5.5 10.5v7M10 10.5v7M14 10.5v7M18.5 10.5v7"/><path d="M3 20h18"/></symbol>
+  <symbol id="i-film-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5"/><path d="m14.8 14.8 5.7 5.7"/><path d="M8.6 7.6v4.8l3.9-2.4z"/></symbol>
+</svg>
+
+<header class="nav">
+  <nav class="wrap" aria-label="Principale">
+    <a class="brand" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg>Michele Spina</a>
+    <ul>
+      <li><a href="#experience">Lavori</a></li>
+      <li><a href="#skills">Skill</a></li>
+      <li><a href="#publications">Articoli</a></li>
+      <li><a href="#about">Chi sono</a></li>
+      <li><a href="#contact">Contatti</a></li>
+    </ul>
+    <a class="lang" href="../index.html?lang=en" hreflang="en" lang="en" title="Read in English"><span class="sr">Read in English</span><span aria-hidden="true">EN</span></a>
+  </nav>
+</header>
+
+<main id="main">
+  <svg class="cable" id="cable" aria-hidden="true"><path class="cable-dark"/><path class="cable-lit"/><g class="cable-bulbs"></g></svg>
+  <canvas class="spark" id="spark" aria-hidden="true" hidden></canvas>
+
+  <div class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="kicker"><b>Software Engineer</b> · Roma</p>
+        <h1 class="sign" aria-label="Michele Spina">
+          <span class="tube tube-ink" aria-hidden="true"><span class="ch" style="--d:.1s;--i:0">M</span><span class="ch" style="--d:.34s;--i:1">i</span><span class="ch" style="--d:.05s;--i:2">c</span><span class="ch" style="--d:.42s;--i:3">h</span><span class="ch" style="--d:.2s;--i:4">e</span><span class="ch" style="--d:0s;--i:5">l</span><span class="ch" style="--d:.3s;--i:6">e</span></span>
+          <span class="sign-line">
+            <span class="tube tube-fire" aria-hidden="true"><span class="ch" style="--d:.38s;--i:7">S</span><span class="ch" style="--d:.15s;--i:8">p</span><span class="ch loose" style="--d:.45s;--i:9">i</span><span class="ch" style="--d:.08s;--i:10">n</span><span class="ch" style="--d:.26s;--i:11">a</span></span>
+            <button class="plug" id="plug" type="button" aria-label="Accensione dell'insegna" aria-pressed="true" data-pull="Stacca la spina" disabled>
+              <svg class="pl" viewBox="0 0 160 100" aria-hidden="true">
+                <g class="pl-cable"><path class="pl-cable-o" d="M-4 78C20 94 52 36 84 62"/><path class="pl-cable-i" d="M-4 78C20 94 52 36 84 62"/></g>
+                <g class="pl-move">
+                  <rect class="pl-pin pl-ink" x="112" y="43.5" width="31" height="9" rx="4.5" stroke-width="3.5"/>
+                  <rect class="pl-pin pl-ink" x="112" y="57.5" width="31" height="9" rx="4.5" stroke-width="3.5"/>
+                  <rect class="pl-pin pl-ink" x="112" y="71.5" width="31" height="9" rx="4.5" stroke-width="3.5"/>
+                  <rect class="pl-body pl-ink" x="74" y="54" width="16" height="16" rx="5"/>
+                  <rect class="pl-body pl-ink" x="84" y="33" width="38" height="58" rx="15"/>
+                  <path class="pl-shine" d="M92 47c0-5 3-7.5 8-7.5"/>
+                  <g class="pl-eyes"><ellipse class="pl-face" cx="99" cy="58" rx="2.8" ry="3.8"/><ellipse class="pl-face" cx="110" cy="58" rx="2.8" ry="3.8"/></g>
+                  <path class="pl-sleep" d="M95.5 59.5q3.5 2.5 7 0M106.5 59.5q3.5 2.5 7 0"/>
+                  <path class="pl-smile" d="M99.5 69q5 4.5 10 0"/>
+                </g>
+                <path class="pl-zap" d="M126 35l-5-9M118 39l-8-5M126 89l-5 9M118 85l-8 5"/>
+                <rect class="pl-plate pl-ink" x="129" y="18" width="27" height="88" rx="12"/>
+                <path class="pl-shade" d="M150 30v64"/>
+                <g class="pl-screw"><circle cx="141" cy="29" r="3.2"/><circle cx="141" cy="95" r="3.2"/><path d="M139 29h4M139 95h4"/></g>
+              </svg>
+            </button>
+          </span>
+        </h1>
+        <p class="gloss" id="gloss" data-off="Michele Spina, in versione unplugged."><b>Spina</b>, in inglese, si dice plug. Da qui MichaelPlug.</p>
+        <p class="lede">Costruisco backend, piattaforme dati e sistemi Web3 per ambienti che non possono permettersi di fermarsi.</p>
+        <div class="actions">
+          <a class="btn solid" href="#experience">Guarda i miei lavori</a>
+          <a class="btn" href="mailto:michelespina96@gmail.com">Scrivimi</a>
+          <a class="link" href="https://github.com/MichaelPlug" rel="me">GitHub</a>
+        </div>
+      </div>
+
+      <figure class="portrait">
+        <div class="print"><img src="../assets/michele.jpg" alt="Ritratto di Michele Spina" width="720" height="720"></div>
+      </figure>
+    </div>
+  </div>
+
+  <div class="proof">
+    <dl class="wrap">
+      <div><dt>sviluppo software dal 2021</dt><dd>5+ anni</dd></div>
+      <div><dt>peer-reviewed, CAiSE 2024 e 2025</dt><dd>2 articoli</dd></div>
+      <div><dt>Informatica, Sapienza Università di Roma</dt><dd>Magistrale, 110 e lode</dd></div>
+    </dl>
+  </div>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Esperienza</h2>
+      <p class="intro">Le parti di un sistema che si notano solo quando smettono di funzionare. È lì che ho passato la maggior parte del mio tempo.</p>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Software Engineer <span class="at">@</span> <a href="https://moveax.it/">Moveax</a></h3>
+          <p class="when">Mar 2024 – oggi · Roma</p>
+        </div>
+        <p class="job-lead">Sviluppo sistemi backend, piattaforme dati e architetture Web3 secondo i principi dell'architettura esagonale.</p>
+
+        <div class="story">
+          <nav class="rail" aria-label="Progetti Moveax">
+            <ol>
+              <li class="rail-group"><span><svg class="icon" aria-hidden="true"><use href="#i-data"/></svg>Data lake aerospaziale</span>
+                <ol>
+                  <li><a href="#p-catalog" class="on"><svg class="icon" aria-hidden="true"><use href="#i-tree"/></svg>Piattaforma di data governance</a></li>
+                  <li><a href="#p-gate"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Piattaforma di accesso ai dati</a></li>
+                  <li><a href="#p-flight"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>Dashboard dei dati di volo</a></li>
+                </ol>
+              </li>
+              <li><a href="#p-transit"><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg>Rete di vendita dei biglietti</a></li>
+              <li><a href="#p-token"><svg class="icon" aria-hidden="true"><use href="#i-token"/></svg>Tokenizzazione di bond</a></li>
+              <li><a href="#p-access"><svg class="icon" aria-hidden="true"><use href="#i-synth"/></svg>Scambio di dati sintetici</a></li>
+              <li><a href="#p-energy"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>Previsioni energetiche</a></li>
+            </ol>
+          </nav>
+
+          <div>
+            <div class="chapter on" id="p-catalog">
+              <p class="group-tag">Data lake aerospaziale</p>
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-tree"/></svg><h4>Piattaforma di data governance</h4></div>
+              <p>Un catalogo dati aziendale costruito su OpenMetadata: quali dati esistono, a chi appartengono e chi può vederli.</p>
+              <ul class="did">
+                <li><strong>Configurazione come codice:</strong> uno strumento Python che crea domini, team e regole di accesso a partire da file YAML.</li>
+                <li><strong>Visibilità:</strong> ognuno vede solo il proprio ramo dell'albero dei domini.</li>
+                <li><strong>Interfaccia:</strong> una UI con il nuovo brand e nuove pagine per seguire l'ingestione dei dati.</li>
+              </ul>
+              <figure class="flow-fig">
+                <figcaption class="sr">Illustrazione di un albero dei domini: una business unit con due divisioni e tre reparti, ogni livello con il proprio team: Data Manager, Business Owner, Data Owner. Un utente del reparto A1 vede il proprio reparto, la sua divisione e la business unit. Gli altri rami restano nascosti.</figcaption>
+                <div class="tree" aria-hidden="true">
+                  <svg class="tree-ln" viewBox="0 0 100 200" preserveAspectRatio="none">
+                    <path d="M50 48V62M33.33 62H83.33M33.33 62V76M83.33 62V76M33.33 124V138M16.67 138H50M16.67 138V152M50 138V152M83.33 124V152"/>
+                    <path class="seen" d="M16.67 152V138H33.33V124M33.33 76V62H50V48"/>
+                  </svg>
+                  <div class="node seen" style="grid-area: 1 / 1 / 2 / 4">Business unit<small>Data Manager</small></div>
+                  <div class="node seen" style="grid-area: 2 / 1 / 3 / 3">Divisione A<small>Business Owner</small></div>
+                  <div class="node" style="grid-area: 2 / 3 / 3 / 4">Divisione B<small>Business Owner</small></div>
+                  <div class="node seen you" style="grid-area: 3 / 1 / 4 / 2">Reparto A1<small>Data Owner</small></div>
+                  <div class="node" style="grid-area: 3 / 2 / 4 / 3">Reparto A2<small>Data Owner</small></div>
+                  <div class="node" style="grid-area: 3 / 3 / 4 / 4">Reparto B1<small>Data Owner</small></div>
+                </div>
+              </figure>
+              <ul class="tags"><li>OpenMetadata</li><li>Python</li><li>Java</li><li>React</li></ul>
+            </div>
+
+            <div class="chapter" id="p-gate">
+              <p class="group-tag">Data lake aerospaziale</p>
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h4>Piattaforma di accesso ai dati</h4></div>
+              <p>Un unico accesso controllato al data lake per tutte le applicazioni. Gli amministratori scelgono quali tabelle e colonne può leggere ogni app, e ogni query viene verificata e registrata.</p>
+              <ul class="did">
+                <li><strong>Policy:</strong> tradotte in regole OPA che Trino verifica a ogni query.</li>
+                <li><strong>Credenziali:</strong> chiavi delle app gestite dalla creazione al reset, con controllo dei ruoli.</li>
+                <li><strong>Audit:</strong> ogni query viene registrata insieme al suo motivo.</li>
+              </ul>
+              <figure class="flow-fig">
+                <figcaption class="sr">Illustrazione: un'applicazione chiede la tabella dei voli. Il controllo delle policy lascia passare la query, e il risultato torna con tre colonne consentite, mentre la colonna del pilota resta bloccata. La query viene scritta nel log di audit con il nome dell'app e il suo motivo di business.</figcaption>
+                <div class="gate" aria-hidden="true">
+                  <div class="gate-q"><small>app · fleet-report</small><code>SELECT *<br>FROM flights</code></div>
+                  <span class="gate-ln"></span>
+                  <div class="gate-check"><span class="ring"><svg class="icon"><use href="#i-shield"/></svg></span><span>Controllo policy<small>OPA</small></span></div>
+                  <span class="gate-ln"></span>
+                  <div class="gate-t">
+                    <span>tail</span><span>date</span><span>altitude</span><span class="no"><svg class="icon"><use href="#i-lock"/></svg>pilot</span>
+                    <i></i><i></i><i></i><i class="no"></i>
+                    <i></i><i></i><i></i><i class="no"></i>
+                    <i></i><i></i><i></i><i class="no"></i>
+                  </div>
+                  <div class="gate-log"><i></i>audit · fleet-report · flights · motivo: revisione mensile</div>
+                </div>
+              </figure>
+              <ul class="tags"><li>Python</li><li>FastAPI</li><li>Trino</li><li>OPA</li><li>React</li></ul>
+            </div>
+
+            <div class="chapter" id="p-flight">
+              <p class="group-tag">Data lake aerospaziale</p>
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg><h4>Dashboard dei dati di volo</h4></div>
+              <p>Dashboard in cui ingegneri e clienti di un costruttore di elicotteri esplorano i voli registrati, uno alla volta o su un'intera flotta. Ho sviluppato buona parte del backend FastAPI che le alimenta.</p>
+              <ul class="did">
+                <li><strong>Grafici:</strong> quota, manovre e statistiche di flotta, interrogati con Trino dal data lake.</li>
+                <li><strong>Accesso:</strong> i clienti vedono solo i propri elicotteri.</li>
+                <li><strong>Export:</strong> i download più pesanti li gestisce un worker in background.</li>
+              </ul>
+              <figure class="flow-fig">
+                <figcaption class="sr">Illustrazione di una scheda della dashboard: la quota di un volo nel tempo, divisa in salita, crociera, hovering e discesa. Le etichette sopra il grafico indicano che la vista è limitata alla flotta del cliente e che si può esportare.</figcaption>
+                <div class="dash" aria-hidden="true">
+                  <div class="dash-top">
+                    <b>Volo 4127<small>quota nel tempo</small></b>
+                    <span class="pill"><svg class="icon"><use href="#i-person"/></svg>solo la tua flotta</span>
+                    <span class="pill">Esporta ↓</span>
+                  </div>
+                  <svg class="dash-plot" viewBox="0 0 100 40" preserveAspectRatio="none">
+                    <path class="grid" d="M0 13H100M0 26H100"/>
+                    <path class="sep" d="M22 0V40M60 0V40M80 0V40"/>
+                    <g class="draw">
+                      <path class="area" d="M0 38C8 37 14 12 22 10S34 8 41 10S53 11 60 9C63 9 63 26 66 26L71 25.4L76 26.4L80 26C88 26 93 37 100 38V40H0Z"/>
+                      <path class="line" d="M0 38C8 37 14 12 22 10S34 8 41 10S53 11 60 9C63 9 63 26 66 26L71 25.4L76 26.4L80 26C88 26 93 37 100 38"/>
+                    </g>
+                  </svg>
+                  <ol class="dash-band">
+                    <li style="--w:22">Salita</li><li style="--w:38">Crociera</li><li style="--w:20">Hovering</li><li style="--w:20">Discesa</li>
+                  </ol>
+                </div>
+              </figure>
+              <ul class="tags"><li>Python</li><li>FastAPI</li><li>Trino</li><li>Iceberg</li><li>Redis</li></ul>
+            </div>
+
+            <div class="chapter" id="p-transit">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg><h4>Rete di vendita dei biglietti</h4></div>
+              <p>La piattaforma dietro la rete di vendita dei biglietti di un'azienda regionale di autobus: negozi, partner e personale di bordo vendono biglietti, ciascuno entro un proprio budget, e l'incasso viene ripartito a ogni vendita. Ho lavorato su tutto lo stack, soprattutto sui servizi Go: audit logging, cancellazione degli account con offuscamento dei dati personali, worker in background e tracing dal gateway fino a Sentry.</p>
+              <figure class="flow-fig">
+                <figcaption class="sr">Diagramma a quattro livelli. App mobile, back-office web e integrazioni dei partner chiamano i gateway NestJS via GraphQL o REST. I gateway chiamano via gRPC i microservizi Go, che gestiscono la logica di business, i worker in background e l'audit trail. I microservizi salvano i dati su Oracle, alimentano le analisi dbt e chiamano un fornitore esterno di bigliettazione.</figcaption>
+                <div class="stack" aria-hidden="true">
+                  <div class="tier">
+                    <div class="tier-name">Client<small>React Native · React</small></div>
+                    <ul><li>App mobile</li><li>Back-office web</li><li>Integrazioni partner</li></ul>
+                  </div>
+                  <div class="hop"><span>GraphQL · REST</span></div>
+                  <div class="tier">
+                    <div class="tier-name">Gateway<small>NestJS</small></div>
+                    <ul><li>BFF mobile</li><li>BFF back-office</li><li>API partner</li></ul>
+                  </div>
+                  <div class="hop"><span>gRPC</span></div>
+                  <div class="tier">
+                    <div class="tier-name">Servizi<small>microservizi Go</small></div>
+                    <ul><li>Servizi di dominio</li><li>Worker in background</li><li>Audit trail</li></ul>
+                  </div>
+                  <div class="hop"><span>SQL · HTTP</span></div>
+                  <div class="tier">
+                    <div class="tier-name">Dati<small>storage · esterni</small></div>
+                    <ul><li>Oracle</li><li>Analisi dbt</li><li>Fornitore biglietti</li></ul>
+                  </div>
+                </div>
+              </figure>
+              <ul class="tags"><li>Go</li><li>gRPC</li><li>Oracle</li><li>NestJS</li><li>GraphQL</li><li>React Native</li><li>dbt</li></ul>
+            </div>
+
+            <div class="chapter" id="p-token">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-token"/></svg><h4>Tokenizzazione di bond</h4></div>
+              <p>Una piattaforma per emettere obbligazioni regolamentate come token su Polygon. Ogni pagamento in euro e il relativo trasferimento di token si regolano insieme, oppure non si regolano affatto. Ho guidato la fase di ricerca: dodici design record, dai pattern di proxy e la scelta della rete fino a custodia e finality, quasi tutti supportati da un proof of concept funzionante. Poi ho sviluppato i servizi Go per il minting, il regolamento con gli investitori, la notarizzazione dei documenti e i rimborsi, oltre a un plugin Hardhat che firma i deploy con AWS KMS.</p>
+              <figure class="flow-fig">
+                <figcaption class="sr">Diagramma della vita di un'obbligazione in quattro passaggi: una factory emette il bond e i token delle cedole, gli investitori sottoscrivono, le cedole vengono pagate a ogni periodo e alla scadenza il capitale viene rimborsato e i token bruciati. Un dettaglio della sottoscrizione mostra il pagamento in euro dell'investitore e i token del bond dell'emittente che entrano da lati opposti in un escrow con hash lock. L'escrow li consegna entrambi alla controparte insieme, oppure li restituisce entrambi.</figcaption>
+                <div aria-hidden="true">
+                  <ol class="life">
+                    <li><b>Emissione</b><small>la factory crea<br>bond + cedole</small></li>
+                    <li class="now"><b>Sottoscrizione</b><small>lo scambio qui sotto</small></li>
+                    <li class="cpn"><b>Cedole</b><small>un token<br>per periodo</small></li>
+                    <li><b>Riscatto</b><small>rimborso,<br>poi burn</small></li>
+                  </ol>
+                  <div class="swap-box">
+                    <b>La sottoscrizione, da vicino</b>
+                    <div class="swap">
+                      <div class="who inv"><span class="av"><svg class="icon"><use href="#i-person"/></svg></span><span class="nm">Investitore</span></div>
+                      <div class="esc"><svg class="icon" viewBox="0 0 24 24"><path class="shackle" d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M12 14.5v2.5"/></svg><span>Escrow<small>con hash lock</small></span></div>
+                      <div class="who iss"><span class="av"><svg class="icon"><use href="#i-bank"/></svg></span><span class="nm">Emittente</span></div>
+                      <span class="leg cash"><span>pagamento € · TIPS</span><i class="pulse"></i></span>
+                      <span class="leg asset"><span>token del bond · ERC-3643</span><i class="pulse"></i></span>
+                    </div>
+                    <div class="swap-note">Le due parti dello scambio si chiudono insieme, oppure tornano indietro entrambe.</div>
+                  </div>
+                </div>
+              </figure>
+              <ul class="tags"><li>Solidity</li><li>ERC-3643</li><li>Polygon</li><li>Go</li><li>Kafka</li><li>AWS KMS</li><li>Hardhat</li></ul>
+            </div>
+
+            <div class="chapter" id="p-access">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-synth"/></svg><h4>Scambio di dati sintetici</h4></div>
+              <p>Ho sviluppato il livello di consenso di una piattaforma per la condivisione di dati sanitari. Le policy di condivisione dei fornitori di dati vengono registrate su Polygon da un contratto Solidity, e decidono poi quali utilizzatori, pubblici o privati, possono scaricare i dataset sintetici generati dai loro dati.</p>
+              <figure class="flow-fig">
+                <figcaption class="sr">Diagramma in due passaggi. Prima il consenso di un fornitore passa dal backend TypeScript e viene salvato come policy su Polygon. Poi quella policy decide quali dataset sintetici gli utilizzatori pubblici o privati possono scaricare da S3.</figcaption>
+                <div class="loop" aria-hidden="true">
+                  <div class="who g-prov"><span class="av"><svg class="icon"><use href="#i-person"/></svg></span><span>Fornitore<small>sceglie la condivisione</small></span></div>
+                  <span class="ln g-c1"><span>1 · consenso</span></span>
+                  <div class="box g-back">Backend<small>Fastify · ethers.js</small></div>
+                  <span class="ln g-c2"></span>
+                  <div class="box hub g-chain">Polygon<small>policy on-chain</small></div>
+                  <span class="ln down g-cv"><span>decide la visibilità</span></span>
+                  <div class="box g-synth">Dati sintetici<small>pubblici · privati</small></div>
+                  <span class="ln back g-c4"><span>2 · accesso via S3</span></span>
+                  <div class="who g-cons"><span class="av"><svg class="icon"><use href="#i-person"/></svg></span><span>Utilizzatore<small>ente pubblico o privato</small></span></div>
+                </div>
+              </figure>
+              <ul class="tags"><li>Solidity</li><li>Polygon</li><li>Hardhat</li><li>ethers.js</li><li>Fastify</li><li>S3</li></ul>
+            </div>
+
+            <div class="chapter" id="p-energy">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg><h4>Previsioni energetiche</h4></div>
+              <p>Ho sviluppato le pipeline Dagster dietro le previsioni settimanali dei consumi degli edifici. Ogni piano e ogni risorsa (elettricità, acqua calda e fredda) gira in parallelo: recupera il proprio storico, prevede le quattro settimane successive con un modello SARIMA e salva i risultati su TimescaleDB.</p>
+              <figure class="flow-fig">
+                <figcaption class="sr">Diagramma: una schedulazione settimanale di Dagster si divide in un'esecuzione parallela per ogni piano e risorsa. Ogni esecuzione recupera lo storico, fa la previsione con SARIMA e salva una previsione a 28 giorni su TimescaleDB.</figcaption>
+                <div class="loop runs" aria-hidden="true">
+                  <div class="box g-sched">Ogni settimana<small>Dagster · domenica</small></div>
+                  <span class="ln g-r1"><span>in parallelo</span></span>
+                  <div class="mat g-mat">
+                    <div class="mat-head"><span>luce</span><span>calda</span><span>fredda</span></div>
+                    <div class="cells"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i></div>
+                    <small>un'esecuzione per piano × risorsa<br>storico · SARIMA · salvataggio</small>
+                  </div>
+                  <span class="ln g-r2"><span>salva</span></span>
+                  <div class="box g-db">TimescaleDB<small>prossimi 28 giorni</small></div>
+                </div>
+              </figure>
+              <ul class="tags"><li>Python</li><li>Dagster</li><li>TimescaleDB</li><li>Alembic</li><li>Kubernetes</li></ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="job" id="film-job">
+        <div class="job-head">
+          <h3>Freelance Software Engineer <span class="at">@</span> CineDev</h3>
+          <p class="when">Lug 2021 – Feb 2024 · Da remoto</p>
+        </div>
+        <p class="job-lead">Ho sviluppato app native per macOS e strumenti di automazione dei dati per grandi produzioni cinematografiche internazionali.</p>
+
+        <div class="story">
+          <nav class="rail" aria-label="Progetti CineDev">
+            <ol>
+              <li><a href="#p-altera" class="on"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg>Gestione dei metadati di camera</a></li>
+              <li><a href="#p-research"><svg class="icon" aria-hidden="true"><use href="#i-film-search"/></svg>Ricerche sui film automatizzate</a></li>
+            </ol>
+          </nav>
+
+          <div class="shots">
+            <div class="vf" id="vf" aria-hidden="true" hidden><span class="vf-rec"></span><span class="vf-tc" id="vf-tc">01:00:00:00</span></div>
+            <div class="chapter on" id="p-altera">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg><h4>Gestione dei metadati di camera</h4></div>
+              <p>Sviluppatore principale di <strong>Altera</strong>, un'app nativa per macOS con cui le troupe, sul set e in post-produzione, gestiscono i metadati delle clip di camera, su produzioni per <strong>Marvel</strong> e <strong>Sony</strong>. Ho scritto circa il 70% dei commit nel passaggio dalla prima beta alla release 1.0, su una codebase Swift da 50.000 righe, e ho gestito l'intero ciclo di rilascio.</p>
+              <figure class="flow-fig">
+                <figcaption class="sr">Diagramma: i file di camera e di montaggio vengono importati, organizzati in bin e layout, poi consegnati come export per il montaggio e come report.</figcaption>
+                <ol class="flow chain" aria-hidden="true">
+                  <li>Importa<small>ALE · CSV · MHL<br>AVB · AAF · OTIO</small></li>
+                  <li>Organizza<small>bin · smart bin<br>mappatura dei layout</small></li>
+                  <li>Consegna<small>EDL · CDL · AAF<br>report HTML/PDF</small></li>
+                </ol>
+              </figure>
+              <p>Ho sviluppato l'interscambio con Avid e gli altri software di montaggio, i motori di export e un linguaggio di template con cui le troupe progettano i propri report. Ho anche portato l'app su Apple Silicon e l'ho tenuta al passo con ogni aggiornamento di macOS.</p>
+              <ul class="tags"><li>Swift</li><li>AppKit</li><li>Xcode</li><li>Python</li></ul>
+            </div>
+            <div class="chapter" id="p-research">
+              <div class="chapter-head"><svg class="icon" aria-hidden="true"><use href="#i-film-search"/></svg><h4>Ricerche sui film automatizzate</h4></div>
+              <p>Ho sviluppato uno strumento Python che trasforma qualsiasi ricerca su IMDb in un foglio di calcolo pronto all'uso per le ricerche di mercato di CineDev. Un semplice CSV decide cosa raccogliere per ogni film, come troupe di camera, sceneggiatori, paesi o incassi, così anche chi non programma può cambiare il report senza toccare il codice.</p>
+              <figure class="flow-fig">
+                <table class="sheet">
+                  <thead><tr><th scope="col">Titolo</th><th scope="col">Camera</th><th scope="col">Sceneggiatori</th><th scope="col">Incassi</th></tr></thead>
+                  <tbody><tr><td>title</td><td>camera dept: key grip, grip</td><td>writers (written by)</td><td>budget, worldwide gross</td></tr></tbody>
+                </table>
+                <figcaption class="sheet-note">Tutta la configurazione è un unico CSV: dai un nome a una colonna, poi elenca i campi IMDb che la riempiono. Ogni film della ricerca diventa una riga.</figcaption>
+              </figure>
+              <ul class="tags"><li>Python</li><li>pandas</li></ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Competenze</h2>
+      <p class="intro">Gli strumenti che uso, e dove li ho usati davvero.</p>
+      <div class="skills-grid" id="skills-grid">
+        <div class="board">
+          <div class="core">
+            <button class="tile" type="button" data-uses="flight gate catalog energy macos meta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg><span class="nm">Python</span><small>6 progetti</small></button>
+            <button class="tile" type="button" data-uses="token transit"><svg class="go" viewBox="0 7 24 10" aria-hidden="true"><path d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .058.035.035.07l-.199.303c-.023.036-.082.07-.117.07zM.047 11.306c-.047 0-.059-.023-.035-.058l.245-.316c.023-.035.082-.058.129-.058h5.328c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07zm2.828 1.075c-.047 0-.059-.035-.035-.07l.163-.292c.023-.035.07-.07.117-.07h2.337c.047 0 .07.035.07.082l-.023.28c0 .047-.047.082-.082.082zm12.129-2.36c-.736.187-1.239.327-1.963.514-.176.046-.187.058-.34-.117-.174-.199-.303-.327-.548-.444-.737-.362-1.45-.257-2.115.175-.795.514-1.204 1.274-1.192 2.22.011.935.654 1.706 1.577 1.835.795.105 1.46-.175 1.987-.77.105-.13.198-.27.315-.434H10.47c-.245 0-.304-.152-.222-.35.152-.362.432-.97.596-1.274a.315.315 0 01.292-.187h4.253c-.023.316-.023.631-.07.947a4.983 4.983 0 01-.958 2.29c-.841 1.11-1.94 1.8-3.33 1.986-1.145.152-2.209-.07-3.143-.77-.865-.655-1.356-1.52-1.484-2.595-.152-1.274.222-2.419.993-3.424.83-1.086 1.928-1.776 3.272-2.02 1.098-.2 2.15-.07 3.096.571.62.41 1.063.97 1.356 1.648.07.105.023.164-.117.2m3.868 6.461c-1.064-.024-2.034-.328-2.852-1.029a3.665 3.665 0 01-1.262-2.255c-.21-1.32.152-2.489.947-3.529.853-1.122 1.881-1.706 3.272-1.95 1.192-.21 2.314-.095 3.33.595.923.63 1.496 1.484 1.648 2.605.198 1.578-.257 2.863-1.344 3.962-.771.783-1.718 1.273-2.805 1.495-.315.06-.63.07-.934.106zm2.78-4.72c-.011-.153-.011-.27-.034-.387-.21-1.157-1.274-1.81-2.384-1.554-1.087.245-1.788.935-2.045 2.033-.21.912.234 1.835 1.075 2.21.643.28 1.285.244 1.905-.07.923-.48 1.425-1.228 1.484-2.233z"/></svg><span class="nm">Go</span><small>2 progetti</small></button>
+            <button class="tile" type="button" data-uses="token transit access gate catalog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg><span class="nm">TypeScript</span><small>5 progetti</small></button>
+            <button class="tile" type="button" data-uses="token access"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-opacity=".6" d="M4.409 6.608 7.981.255l3.572 6.353z"/><path fill-opacity=".8" d="M7.981.255h7.143l-3.572 6.353z"/><path d="M4.409 6.608h7.143l-3.571 6.353z"/><path fill-opacity=".6" d="M19.591 17.392 16.019 23.745 12.448 17.392z"/><path fill-opacity=".8" d="M16.019 23.745H8.876l3.572-6.353z"/><path d="M19.591 17.392h-7.143l3.571-6.353z"/></svg><span class="nm">Solidity</span><small>2 progetti</small></button>
+            <button class="tile" type="button" data-uses="macos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.508 0c-.287 0-.573 0-.86.002-.241.002-.483.003-.724.01-.132.003-.263.009-.395.015A9.154 9.154 0 0 0 4.348.15 5.492 5.492 0 0 0 2.85.645 5.04 5.04 0 0 0 .645 2.848c-.245.48-.4.972-.495 1.5-.093.52-.122 1.05-.136 1.576a35.2 35.2 0 0 0-.012.724C0 6.935 0 7.221 0 7.508v8.984c0 .287 0 .575.002.862.002.24.005.481.012.722.014.526.043 1.057.136 1.576.095.528.25 1.02.495 1.5a5.03 5.03 0 0 0 2.205 2.203c.48.244.97.4 1.498.495.52.093 1.05.124 1.576.138.241.007.483.009.724.01.287.002.573.002.86.002h8.984c.287 0 .573 0 .86-.002.241-.001.483-.003.724-.01a10.523 10.523 0 0 0 1.578-.138 5.322 5.322 0 0 0 1.498-.495 5.035 5.035 0 0 0 2.203-2.203c.245-.48.4-.972.495-1.5.093-.52.124-1.05.138-1.576.007-.241.009-.481.01-.722.002-.287.002-.575.002-.862V7.508c0-.287 0-.573-.002-.86a33.662 33.662 0 0 0-.01-.724 10.5 10.5 0 0 0-.138-1.576 5.328 5.328 0 0 0-.495-1.5A5.039 5.039 0 0 0 21.152.645 5.32 5.32 0 0 0 19.654.15a10.493 10.493 0 0 0-1.578-.138 34.98 34.98 0 0 0-.722-.01C17.067 0 16.779 0 16.492 0H7.508zm6.035 3.41c4.114 2.47 6.545 7.162 5.549 11.131-.024.093-.05.181-.076.272l.002.001c2.062 2.538 1.5 5.258 1.236 4.745-1.072-2.086-3.066-1.568-4.088-1.043a6.803 6.803 0 0 1-.281.158l-.02.012-.002.002c-2.115 1.123-4.957 1.205-7.812-.022a12.568 12.568 0 0 1-5.64-4.838c.649.48 1.35.902 2.097 1.252 3.019 1.414 6.051 1.311 8.197-.002C9.651 12.73 7.101 9.67 5.146 7.191a10.628 10.628 0 0 1-1.005-1.384c2.34 2.142 6.038 4.83 7.365 5.576C8.69 8.408 6.208 4.743 6.324 4.86c4.436 4.47 8.528 6.996 8.528 6.996.154.085.27.154.36.213.085-.215.16-.437.224-.668.708-2.588-.09-5.548-1.893-7.992z"/></svg><span class="nm">Swift</span><small>1 progetto</small></button>
+          </div>
+
+          <div class="skill-row">
+            <h3>Backend</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="flight gate token transit energy access">Architettura esagonale</button>
+              <button class="chip" type="button" data-uses="gate token transit">Microservizi</button>
+              <button class="chip" type="button" data-uses="token transit">GraphQL</button>
+              <button class="chip" type="button" data-uses="flight gate">FastAPI</button>
+              <button class="chip" type="button" data-uses="access">Fastify</button>
+              <button class="chip" type="button" data-uses="transit">gRPC</button>
+              <button class="chip" type="button" data-uses="transit">NestJS</button>
+              <button class="chip" type="button" data-uses="token">Apollo Federation</button>
+              <button class="chip" type="button" data-uses="token">Apache Kafka</button>
+            </div>
+          </div>
+          <div class="skill-row">
+            <h3>Piattaforme dati</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="flight gate">Apache Iceberg</button>
+              <button class="chip" type="button" data-uses="flight gate">Trino</button>
+              <button class="chip" type="button" data-uses="energy">Dagster</button>
+              <button class="chip" type="button" data-uses="transit">dbt</button>
+              <button class="chip" type="button" data-uses="gate">OPA</button>
+              <button class="chip" type="button" data-uses="catalog">OpenMetadata</button>
+            </div>
+          </div>
+          <div class="skill-row">
+            <h3>Web3</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="token access">Polygon</button>
+              <button class="chip" type="button" data-uses="token access">Hardhat</button>
+              <button class="chip" type="button" data-uses="access">ethers.js</button>
+              <button class="chip" type="button" data-uses="token">ERC-3643</button>
+              <button class="chip" type="button" data-uses="token">OpenZeppelin</button>
+              <button class="chip" type="button" data-uses="token">Foundry</button>
+              <button class="chip" type="button" data-uses="token">go-ethereum</button>
+              <button class="chip" type="button" data-uses="token">viem</button>
+            </div>
+          </div>
+          <div class="skill-row">
+            <h3>Frontend e app</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="gate catalog token transit">React</button>
+              <button class="chip" type="button" data-uses="transit">React Native</button>
+              <button class="chip" type="button" data-uses="token">React Flow</button>
+              <button class="chip" type="button" data-uses="transit">Material UI</button>
+              <button class="chip" type="button" data-uses="macos">AppKit</button>
+              <button class="chip" type="button" data-uses="macos">Xcode</button>
+            </div>
+          </div>
+          <div class="skill-row">
+            <h3>Storage</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="flight gate token access">PostgreSQL</button>
+              <button class="chip" type="button" data-uses="energy">TimescaleDB</button>
+              <button class="chip" type="button" data-uses="token">Ent ORM</button>
+              <button class="chip" type="button" data-uses="access">Prisma</button>
+              <button class="chip" type="button" data-uses="transit">Oracle DB</button>
+              <button class="chip" type="button" data-uses="flight gate">MinIO</button>
+              <button class="chip" type="button" data-uses="flight">Redis</button>
+              <button class="chip" type="button" data-uses="access">AWS S3</button>
+            </div>
+          </div>
+          <div class="skill-row">
+            <h3>Infrastruttura e operations</h3>
+            <div class="chips">
+              <button class="chip" type="button" data-uses="token energy access">Docker</button>
+              <button class="chip" type="button" data-uses="energy">Kubernetes</button>
+              <button class="chip" type="button" data-uses="transit">ArgoCD</button>
+              <button class="chip" type="button" data-uses="token">AWS KMS</button>
+              <button class="chip" type="button" data-uses="transit">Sentry</button>
+              <button class="chip" type="button" data-uses="transit">Grafana</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="used" id="used" aria-label="I progetti e le competenze che li hanno resi possibili" hidden>
+          <h3>Progetti</h3>
+          <p class="used-read" id="used-read" aria-hidden="true" data-hover="Passa su una competenza per vedere i suoi progetti, o su un progetto per vedere il suo stack." data-tap="Tocca una competenza o un progetto per vedere cosa li collega."></p>
+          <p class="sr" id="used-say" aria-live="polite"></p>
+          <ul>
+            <li data-p="catalog"><button class="proj" type="button" data-p="catalog" data-at="#p-catalog"><svg class="icon" aria-hidden="true"><use href="#i-tree"/></svg><span class="sr-sm">Piattaforma di data governance</span></button></li>
+            <li data-p="gate"><button class="proj" type="button" data-p="gate" data-at="#p-gate"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span class="sr-sm">Piattaforma di accesso ai dati</span></button></li>
+            <li data-p="flight"><button class="proj" type="button" data-p="flight" data-at="#p-flight"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg><span class="sr-sm">Dashboard dei dati di volo</span></button></li>
+            <li data-p="transit"><button class="proj" type="button" data-p="transit" data-at="#p-transit"><svg class="icon" aria-hidden="true"><use href="#i-ticket"/></svg><span class="sr-sm">Rete di vendita dei biglietti</span></button></li>
+            <li data-p="token"><button class="proj" type="button" data-p="token" data-at="#p-token"><svg class="icon" aria-hidden="true"><use href="#i-token"/></svg><span class="sr-sm">Tokenizzazione di bond</span></button></li>
+            <li data-p="access"><button class="proj" type="button" data-p="access" data-at="#p-access"><svg class="icon" aria-hidden="true"><use href="#i-synth"/></svg><span class="sr-sm">Scambio di dati sintetici</span></button></li>
+            <li data-p="energy"><button class="proj" type="button" data-p="energy" data-at="#p-energy"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg><span class="sr-sm">Previsioni energetiche</span></button></li>
+            <li data-p="macos"><button class="proj" type="button" data-p="macos" data-at="#p-altera"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg><span class="sr-sm">Gestione dei metadati di camera</span></button></li>
+            <li data-p="meta"><button class="proj" type="button" data-p="meta" data-at="#p-research"><svg class="icon" aria-hidden="true"><use href="#i-film-search"/></svg><span class="sr-sm">Ricerche sui film automatizzate</span></button></li>
+          </ul>
+          <a class="used-more" id="used-more" href="#experience" hidden>Leggi la storia</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="wrap">
+      <h2>Pubblicazioni</h2>
+      <p class="intro">Le blockchain pubbliche copiano ogni record su ogni nodo: ottimo per la fiducia, pessimo per i segreti. Questi due articoli, scritti con ricercatori della Sapienza, di Utrecht e della TU di Monaco e pubblicati a CAiSE, cifrano i documenti in modo che il ledger ne dimostri l'esistenza, mentre solo le persone giuste possono leggerli.</p>
+      <div>
+        <article class="paper">
+          <b>MARTSIA</b>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2407.10684" lang="en">A Tool for Confidential Data Exchange via Public Blockchain</a></h3>
+            <span class="paper-meta">CAiSE 2025 · arXiv:2407.10684</span>
+            <p>Distribuisce la fiducia su più autorità indipendenti. Ognuna emette una parte della chiave di decifratura e chi legge mette insieme i pezzi, così nessun soggetto da solo può sbloccare i dati. Un documento di esportazione può essere diviso in modo che dogana, vettore e produttore leggano ciascuno solo la propria parte: un solo messaggio invece di dieci copie.</p>
+            <p>Funziona su Ethereum e Algorand, ed è stato testato con tre app esistenti per lo scambio di NFT, la supply chain e il retail.</p>
+            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Ethereum</li><li>Algorand</li></ul>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2407.10684">Articolo</a>
+              <a href="https://github.com/apwbs/MARTSIA">Codice</a>
+              <a href="https://github.com/apwbs/MARTSIA-Demo">Demo</a>
+              <a href="https://www.youtube.com/watch?v=RAcifWw1_B0">Video</a>
+            </div>
+          </div>
+        </article>
+        <article class="paper">
+          <b>CAKE</b>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2405.04152" lang="en">Sharing Slices of Confidential Data on Blockchain</a></h3>
+            <span class="paper-meta">CAiSE 2024 · arXiv:2405.04152</span>
+            <p>Cifra un documento, o sue singole parti, con una regola su chi può leggerlo, ad esempio «dogana sulla spedizione 29837». Il file cifrato va su IPFS e la sua impronta va on-chain. Solo i lettori che rispettano la regola ottengono una chiave valida.</p>
+            <p>Usato in BRIE, un progetto nazionale di cybersecurity per la logistica di import-export.</p>
+            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Algorand</li><li>Docker</li></ul>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2405.04152">Articolo</a>
+              <a href="https://github.com/apwbs/CAKE">Codice</a>
+              <a href="https://github.com/MichaelPlug/SPECK">SPECK</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>Chi sono</h2>
+      <div class="facts">
+        <div>
+          <h3>formazione</h3>
+          <ul>
+            <li><strong>Laurea magistrale in Informatica</strong><small>La Sapienza, Roma · 2021–2024</small><small>110/110 e lode</small></li>
+            <li><strong>Laurea triennale in Informatica</strong><small>La Sapienza, Roma · 2017–2021</small></li>
+          </ul>
+        </div>
+        <div>
+          <h3>certificazione</h3>
+          <ul>
+            <li><strong>AWS Academy Graduate</strong><small>AWS Academy Cloud Foundations</small><small>Lug 2023</small></li>
+          </ul>
+        </div>
+        <div>
+          <h3>lingue</h3>
+          <ul>
+            <li><strong>Italiano</strong><small>Madrelingua</small></li>
+            <li><strong>Inglese</strong><small>B1+</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="bulb-row" aria-hidden="true">
+        <svg class="bulb" viewBox="0 0 120 150">
+          <path d="M0 10H44Q60 10 60 26V34"/>
+          <path class="bulb-glow" d="M48 56C48 66 26 72 26 98a34 34 0 0 0 68 0C94 72 72 66 72 56z"/>
+          <path class="bulb-glass" d="M48 56C48 66 26 72 26 98a34 34 0 0 0 68 0C94 72 72 66 72 56z"/>
+          <path class="bulb-fil" d="M52 62V84l-6 12 7 8 7-10 7 10 7-8-6-12V62"/>
+          <rect class="bulb-cap" x="48" y="34" width="24" height="22" rx="3"/>
+          <path class="bulb-thread" d="M48 41h24M48 48h24"/>
+        </svg>
+      </div>
+      <h2 class="sign" id="closing-sign" aria-label="Hai un'idea?">
+        <span class="tube tube-ink" aria-hidden="true"><span class="ch" style="--d:.12s">H</span><span class="ch" style="--d:.34s">a</span><span class="ch" style="--d:.03s">i</span> <span class="ch" style="--d:.42s">u</span><span class="ch" style="--d:.2s">n</span><span class="ch" style="--d:.3s">’</span></span><span class="tube tube-fire" aria-hidden="true"><span class="ch" style="--d:.28s">i</span><span class="ch" style="--d:.08s">d</span><span class="ch" style="--d:.45s">e</span><span class="ch" style="--d:.16s">a</span><span class="ch" style="--d:.38s">?</span></span>
+      </h2>
+      <p id="closing-line" data-off="Qualcuno ha staccato la spina. Prima riattaccala, poi raccontami tutto.">Mettiamoci in contatto: raccontamela, e la trasformo in realtà. L’email è il modo più veloce per raggiungermi.</p>
+      <div class="actions">
+        <button class="btn solid" id="replug" type="button" hidden>Riattacca la spina</button>
+        <a class="btn solid" href="mailto:michelespina96@gmail.com">michelespina96@gmail.com</a>
+        <a class="btn" href="https://github.com/MichaelPlug" rel="me">github.com/MichaelPlug</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Michele Spina · Software Engineer · Roma</div></footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
