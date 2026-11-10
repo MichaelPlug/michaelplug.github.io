@@ -272,9 +272,9 @@ h1 {
   letter-spacing: -.02em;
 }
 h1 > span { display: block; }
-.gloss { margin-top: 16px; font-size: .98rem; color: var(--dim); }
+.gloss { margin-top: 14px; font-size: .88rem; color: var(--dim); }
 .gloss b { font-weight: 500; color: var(--ink); }
-.lede { margin-top: 16px; max-width: 24em; font-size: clamp(1.2rem, 2vw, 1.4rem); line-height: 1.45; }
+.lede { margin-top: 22px; max-width: 24em; font-size: clamp(1.2rem, 2vw, 1.4rem); line-height: 1.45; }
 
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin-top: 30px; }
 .btn {
@@ -786,8 +786,11 @@ footer { padding: 22px 0 30px; border-top: 1px solid var(--line); text-align: ce
   .tile:nth-child(n+4) { grid-column: span 3; }
 }
 @media (max-width: 900px) {
-  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
-  .portrait { width: min(100%, 260px); }
+  /* phones: the portrait shrinks to a badge above the name so name, pitch and proof share the first screen */
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 32px 40px; }
+  .portrait { order: -1; justify-self: start; width: 96px; }
+  .portrait::before { inset: -40px; }
+  .print { box-shadow: 0 8px 24px rgba(0, 0, 0, .45); }
   .story { grid-template-columns: minmax(0, 1fr); }
   .rail { display: none; }
   .chapter { min-height: 0; }
@@ -810,7 +813,9 @@ footer { padding: 22px 0 30px; border-top: 1px solid var(--line); text-align: ce
   .used-more { display: none; }
 }
 @media (max-width: 640px) {
-  .proof dl { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .proof dl { gap: 12px; padding-block: 18px; }
+  .proof dd { font-size: 1.15rem; }
+  .proof dt { font-size: 12px; }
   .flow.chain { flex-direction: column; }
   .flow.chain li + li { margin: 26px 0 0; }
   .flow.chain li + li::before { left: 50%; top: -27px; width: 2px; height: 26px; margin: 0 0 0 -1px; transform-origin: 50% 0; }
