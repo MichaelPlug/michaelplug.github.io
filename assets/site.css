@@ -84,7 +84,7 @@ svg { display: block; }
 .lang:hover { color: var(--accent); border-color: var(--accent); }
 
 /* the room lights up as the plug goes in */
-.dusk { position: fixed; inset: 0; z-index: 40; background: #050506; opacity: 0; pointer-events: none; animation: dusk .95s linear; }
+.dusk { position: fixed; inset: 0; z-index: 40; background: #050506; opacity: 0; pointer-events: none; animation: dusk .55s linear; }
 @keyframes dusk {
   0%, 26% { opacity: .7; }
   30%, 40% { opacity: .2; }
@@ -99,9 +99,9 @@ svg { display: block; }
 .tube-fire { --sign: var(--accent); }
 .sign .ch {
   color: var(--sign); text-shadow: var(--glow);
-  animation: strike .5s linear calc(var(--start, 0s) + var(--d, 0s)) backwards;
+  animation: strike .36s linear calc(var(--start, 0s) + var(--d, 0s)) backwards;
 }
-h1.sign { --start: .26s; }
+h1.sign { --start: .14s; }
 #closing-sign { --start: .8s; }
 .sign.wait .ch, html.off .sign .ch { animation: none; color: var(--unlit); text-shadow: none; }
 
@@ -109,7 +109,7 @@ h1.sign { --start: .26s; }
    one loose tube that buzzes, and letters that crackle under the pointer */
 h1.sign .tube { --glow: 0 0 1px rgba(255, 250, 240, .9), 0 0 8px rgba(255, 190, 100, .45), 0 0 24px rgba(255, 165, 70, .28), 0 0 64px rgba(255, 150, 60, .14); }
 h1.sign .ch {
-  --strike: strike .5s linear calc(var(--start) + var(--d)) backwards;
+  --strike: strike .36s linear calc(var(--start) + var(--d) * .6) backwards;
   --surge: surge 6.5s ease-out calc(var(--start) + 1.4s + var(--i) * 55ms) infinite;
   --buzz: buzz 4.7s linear calc(var(--start) + 2.3s) infinite;
   --zap: zap .38s steps(1);
@@ -159,9 +159,9 @@ html.off h1.sign .ch, h1.sign.wait .ch { animation: none; filter: none; transfor
 .pl-shade { stroke: #dccfbd; stroke-width: 5; transition: opacity .2s; }
 .pl-screw { fill: none; stroke: #b3a897; stroke-width: 2; }
 .pl-zap { stroke: #ffd98f; stroke-width: 3.5; transition: opacity .2s; }
-h1.sign .pl-move { animation: plug-in .26s ease-in backwards; }
-h1.sign .pl-cable { animation: cable-in .26s ease-in backwards; }
-h1.sign .pl-zap { animation: bulb-on .45s linear .26s backwards; }
+h1.sign .pl-move { animation: plug-in .14s ease-in backwards; }
+h1.sign .pl-cable { animation: cable-in .14s ease-in backwards; }
+h1.sign .pl-zap { animation: bulb-on .35s linear .14s backwards; }
 @keyframes plug-in { from { transform: translateX(-26px); } }
 @keyframes cable-in { from { transform: scaleX(.7); } }
 .plug:not(:disabled):hover .pl-move { transform: translateX(-3px) rotate(-3deg); transform-origin: 100px 62px; }
@@ -178,11 +178,11 @@ html.off h1.sign .pl-zap { animation: none; opacity: 0; }
 
 /* the cable ends in a bulb: a lit bulb means an idea */
 .bulb-row { display: flex; justify-content: center; margin-bottom: 18px; }
-.bulb { display: block; width: 96px; height: 120px; overflow: visible; fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; transition: stroke .2s .42s; }
+.bulb { display: block; width: 96px; height: 120px; overflow: visible; fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; transition: stroke .2s .25s; }
 .bulb-cap { fill: var(--panel); stroke: var(--ink); }
 .bulb-thread { stroke: var(--ink); stroke-width: 2; }
 .bulb-glass { stroke: var(--ink); }
-.bulb-glow { fill: #ffd98f; stroke: none; filter: drop-shadow(0 0 10px rgba(255, 190, 100, .35)) drop-shadow(0 0 32px rgba(255, 170, 70, .16)); animation: bulb-on .45s linear .42s backwards; }
+.bulb-glow { fill: #ffd98f; stroke: none; filter: drop-shadow(0 0 10px rgba(255, 190, 100, .35)) drop-shadow(0 0 32px rgba(255, 170, 70, .16)); animation: bulb-on .35s linear .25s backwards; }
 .bulb-fil { stroke: var(--brand); stroke-width: 2.5; }
 @keyframes bulb-on {
   0%, 30% { opacity: 0; }

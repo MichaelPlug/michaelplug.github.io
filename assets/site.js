@@ -338,7 +338,7 @@
       requestAnimationFrame(runFlow);
       return;
     }
-    if (!flow.dur) flow.dur = Math.min(flow.maxMs, Math.max(flow.minMs, Math.abs(goal() - flow.from) / 1.2));
+    if (!flow.dur) flow.dur = Math.min(flow.maxMs, Math.max(flow.minMs, Math.abs(goal() - flow.from) / 2.6));
     var p = Math.min(1, (now - flow.t0) / flow.dur), e = 1 - Math.pow(1 - p, 3);
     var len = flow.from + (goal() - flow.from) * e;
     energy = Math.max(energy, .8);
@@ -353,7 +353,7 @@
 
   function closeCircuit() {
     closed = true;
-    startFlow(Math.max(0, shown), 0, 400, 900, lightBulb);
+    startFlow(Math.max(0, shown), 0, 250, 500, lightBulb);
   }
 
   onPower = function (on) {
@@ -363,7 +363,7 @@
       contactEl.classList.add('waiting');
       closing.classList.add('wait');
     }
-    startFlow(0, 900, 500, 1400, closed ? lightBulb : null);
+    startFlow(0, 400, 300, 650, closed ? lightBulb : null);
   };
 
   function arc(length) {
@@ -492,6 +492,6 @@
   if (document.fonts) document.fonts.ready.then(relayout);
 
   // First light: the plug goes in, the sign strikes, then the current leaves the S.
-  startFlow(0, 900, 500, 1400, null);
+  startFlow(0, 400, 300, 650, null);
   frame();
 })();
