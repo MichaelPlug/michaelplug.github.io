@@ -192,25 +192,58 @@
     return { x: r.left - m.left + fs * .065, y: base - m.top - fs * .1 };
   }
 
+  // The wire is built from cubic curves we keep as numbers next to the path data, so its
+  // length and points come from arithmetic. Asking the browser instead (getPointAtLength
+  // every few pixels down a page-long path) froze phones for seconds on every layout.
+  function Wire(x, y) { this.d = 'M' + x + ' ' + y; this.segs = []; this.x = x; this.y = y; }
+  Wire.prototype.to = function (x1, y1, x2, y2, x, y) {
+    this.d += 'C' + x1 + ' ' + y1 + ' ' + x2 + ' ' + y2 + ' ' + x + ' ' + y;
+    this.segs.push([this.x, this.y, x1, y1, x2, y2, x, y]);
+    this.x = x;
+    this.y = y;
+  };
+
+  // Walks the curves in fine chords and drops a point every STEP px of wire.
+  // Also notes the length at the end of each curve.
+  function sample(segs) {
+    var FINE = 32, px = segs[0][0], py = segs[0][1], out = [px, py], ends = [], walked = 0, next = STEP;
+    segs.forEach(function (s) {
+      for (var i = 1; i <= FINE; i++) {
+        var t = i / FINE, u = 1 - t, a = u * u * u, b = 3 * u * u * t, c = 3 * u * t * t, e = t * t * t;
+        var x = a * s[0] + b * s[2] + c * s[4] + e * s[6], y = a * s[1] + b * s[3] + c * s[5] + e * s[7];
+        var d = Math.sqrt((x - px) * (x - px) + (y - py) * (y - py));
+        for (; next <= walked + d; next += STEP) {
+          var f = (next - walked) / d;
+          out.push(px + (x - px) * f, py + (y - py) * f);
+        }
+        walked += d;
+        px = x;
+        py = y;
+      }
+      ends.push(walked);
+    });
+    out.push(px, py);
+    return { pts: out, ends: ends, length: walked };
+  }
+
   // A loose wave, like a cable hung by hand: whole periods only, so every end meets level.
-  function waveDown(x, y0, y1) {
-    var len = y1 - y0, n = Math.max(1, Math.round(len / WAVE)), per = len / n, d = '', ys = [];
+  function waveDown(w, x, y0, y1) {
+    var len = y1 - y0, n = Math.max(1, Math.round(len / WAVE)), per = len / n, ys = [];
     for (var k = 0; k < n; k++) {
       var y = y0 + k * per;
-      d += 'C' + (x + 8) + ' ' + (y + per * .166) + ' ' + (x + 8) + ' ' + (y + per * .334) + ' ' + x + ' ' + (y + per / 2) +
-           'S' + (x - 8) + ' ' + (y + per * .834) + ' ' + x + ' ' + (y + per);
+      w.to(x + 8, y + per * .166, x + 8, y + per * .334, x, y + per / 2);
+      w.to(x - 8, y + per * .666, x - 8, y + per * .834, x, y + per);
       ys.push(y + per / 2);
     }
-    return { d: d, bulbs: ys };
+    return ys;
   }
-  function waveAcross(x0, x1, y) {
-    var len = x1 - x0, n = Math.max(1, Math.round(len / WAVE)), per = len / n, d = '';
+  function waveAcross(w, x0, x1, y) {
+    var len = x1 - x0, n = Math.max(1, Math.round(len / WAVE)), per = len / n;
     for (var k = 0; k < n; k++) {
       var x = x0 + k * per;
-      d += 'C' + (x + per * .166) + ' ' + (y + 8) + ' ' + (x + per * .334) + ' ' + (y + 8) + ' ' + (x + per / 2) + ' ' + y +
-           'S' + (x + per * .834) + ' ' + (y - 8) + ' ' + (x + per) + ' ' + y;
+      w.to(x + per * .166, y + 8, x + per * .334, y + 8, x + per / 2, y);
+      w.to(x + per * .666, y - 8, x + per * .834, y - 8, x + per, y);
     }
-    return d;
   }
 
   function layoutCable() {
@@ -220,26 +253,26 @@
     var runY = b.top - m.top + b.height * (10 / 150), endX = b.left - m.left;
     mainTop = m.top + scrollY;
 
-    var lead = 'M' + s.x + ' ' + s.y + 'C' + (s.x - (s.x - cx) * .6) + ' ' + s.y + ' ' + (cx - 3) + ' ' + (y1 - drop * .55) + ' ' + cx + ' ' + y1;
-    var down = waveDown(cx, y1, runY - R);
-    var toCorner = lead + down.d + 'Q' + cx + ' ' + runY + ' ' + (cx + R) + ' ' + runY;
-    var d = toCorner + waveAcross(cx + R, Math.max(cx + R + 1, endX), runY);
+    var w = new Wire(s.x, s.y);
+    w.to(s.x - (s.x - cx) * .6, s.y, cx - 3, y1 - drop * .55, cx, y1);
+    var bulbYs = waveDown(w, cx, y1, runY - R);
+    w.to(w.x, w.y + (runY - w.y) * 2 / 3, cx + R / 3, runY, cx + R, runY);  // the rounded corner
+    var corner = w.segs.length;
+    waveAcross(w, cx + R, Math.max(cx + R + 1, endX), runY);
 
     cable.setAttribute('width', Math.ceil(Math.max(endX, cx) + 40));
     cable.setAttribute('height', Math.ceil(runY + 40));
-    dark.setAttribute('d', toCorner);
-    cornerLen = dark.getTotalLength();
-    dark.setAttribute('d', d);
-    litPath.setAttribute('d', d);
-    total = dark.getTotalLength();
-
-    pts = [];
-    for (var l = 0; l < total; l += STEP) { var p = dark.getPointAtLength(l); pts.push(p.x, p.y); }
-    var last = dark.getPointAtLength(total);
-    pts.push(last.x, last.y);
+    dark.setAttribute('d', w.d);
+    litPath.setAttribute('d', w.d);
+    var fit = sample(w.segs);
+    pts = fit.pts;
+    total = fit.length;
+    cornerLen = fit.ends[corner - 1];
+    // Dash lengths count in our measure of the wire, so the lit part ends right at the spark.
+    litPath.setAttribute('pathLength', total);
 
     bulbBox.textContent = '';
-    bulbs = down.bulbs.map(function (y) {
+    bulbs = bulbYs.map(function (y) {
       var g = document.createElementNS(SVGNS, 'g');
       g.setAttribute('class', 'cb');
       g.setAttribute('transform', 'translate(' + cx + ' ' + y + ')');
