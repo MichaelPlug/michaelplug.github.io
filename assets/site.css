@@ -171,7 +171,7 @@ html.off h1.sign .ch, h1.sign.wait .ch { animation: none; filter: none; transfor
 .pl-cable { transform-origin: -4px 78px; transition: transform .2s ease-out; }
 .pl-cable-o { stroke: var(--ol); stroke-width: 10; }
 .pl-cable-i { stroke: var(--accent); stroke-width: 5; transition: stroke .2s; }
-.pl-move { transition: transform .2s ease-out; }
+.pl-move { transform-origin: 100px 62px; transition: transform .2s ease-out; }
 .pl-ink { stroke: var(--ol); stroke-width: 4.5; }
 .pl-body { fill: var(--accent); transition: fill .2s; }
 .pl-pin { fill: #efe8de; transition: fill .2s; }
@@ -188,7 +188,8 @@ h1.sign .pl-cable { animation: cable-in .14s ease-in backwards; }
 h1.sign .pl-zap { animation: bulb-on .35s linear .14s backwards; }
 @keyframes plug-in { from { transform: translateX(-26px); } }
 @keyframes cable-in { from { transform: scaleX(.7); } }
-.plug:not(:disabled):hover .pl-move { transform: translateX(-3px) rotate(-3deg); transform-origin: 100px 62px; }
+/* the wiggle only while plugged in, or a hovered pull would leave the body behind its cable */
+html:not(.off) .plug:not(:disabled):hover .pl-move { transform: translateX(-3px) rotate(-3deg); }
 html.off h1.sign .pl-move { animation: none; transform: translateX(-26px); }
 html.off h1.sign .pl-cable { animation: none; transform: scaleX(.7); }
 html.off h1.sign .pl-cable-i { stroke: var(--unlit); }
