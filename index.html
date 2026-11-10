@@ -73,10 +73,10 @@
   <nav class="wrap" aria-label="Primary">
     <a class="brand" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg>Michele Spina</a>
     <ul>
-      <li><a href="#experience">Work</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#publications">Papers</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Work</a></li>
+      <li><a href="#publications">Papers</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="lang" href="it/index.html" hreflang="it" lang="it" title="Leggi in italiano"><span class="sr">Leggi in italiano</span><span aria-hidden="true">IT</span></a>
@@ -139,6 +139,24 @@
       <div><dt>Computer Science, Sapienza University of Rome</dt><dd>MSc, 110/110 cum laude</dd></div>
     </dl>
   </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <div class="about">
+        <div class="about-text">
+          <p>Software Engineer with over five years of experience building scalable backend services, enterprise data platforms and Web3 architectures for high-availability environments.</p>
+          <p>At Moveax, since 2024, I design and build Go and Python services following Hexagonal Architecture and Clean Code principles: data lakehouses on Iceberg and Trino, financial tokenization infrastructure on Polygon, and mission-critical APIs.</p>
+          <p>From 2021 to 2024 I worked as a freelance engineer, delivering native macOS applications and data automation tools for international film productions.</p>
+          <p>Alongside my master's degree I collaborated with research groups at Sapienza, Utrecht University and TU Munich on confidential data sharing over public blockchains, co-authoring two papers published at CAiSE 2024 and 2025.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>education</dt><dd><strong>MSc, Computer Science</strong><small>Sapienza, Rome · 2024 · 110/110 cum laude</small></dd><dd><strong>BSc, Computer Science</strong><small>Sapienza, Rome · 2021</small></dd></div>
+          <div><dt>languages</dt><dd><strong>Italian, English</strong></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
 
   <section id="experience">
     <div class="wrap">
@@ -408,6 +426,46 @@
     </div>
   </section>
 
+  <section id="publications">
+    <div class="wrap">
+      <h2>Publications</h2>
+      <p class="intro">Public blockchains copy every record to every node. That's great for trust and bad for secrets. These two papers, written with researchers at Sapienza, Utrecht and TU Munich and published at CAiSE, encrypt documents so the ledger proves they exist while only the right people can read them.</p>
+      <div>
+        <article class="paper">
+          <b>MARTSIA</b>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2407.10684">A Tool for Confidential Data Exchange via Public Blockchain</a></h3>
+            <span class="paper-meta">CAiSE 2025 · arXiv:2407.10684</span>
+            <p>Spreads trust across several independent authorities. Each one issues part of a decryption key and the reader puts the parts together, so no single party can unlock the data. One export document can be split so customs, the carrier and the manufacturer each read only their own part: one message instead of ten copies.</p>
+            <p>Runs on Ethereum and Algorand, and was tested with three existing apps for NFT trading, supply chain and retail.</p>
+            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Ethereum</li><li>Algorand</li></ul>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2407.10684">Paper</a>
+              <a href="https://github.com/apwbs/MARTSIA">Code</a>
+              <a href="https://github.com/apwbs/MARTSIA-Demo">Demo</a>
+              <a href="https://www.youtube.com/watch?v=RAcifWw1_B0">Video</a>
+            </div>
+          </div>
+        </article>
+        <article class="paper">
+          <b>CAKE</b>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2405.04152">Sharing Slices of Confidential Data on Blockchain</a></h3>
+            <span class="paper-meta">CAiSE 2024 · arXiv:2405.04152</span>
+            <p>Encrypts a document, or separate parts of it, with a rule about who may read it, such as "customs on shipment 29837". The encrypted file goes to IPFS and its fingerprint goes on-chain. Only readers who match the rule get a working key.</p>
+            <p>Used in BRIE, a national cybersecurity project for import-export logistics.</p>
+            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Algorand</li><li>Docker</li></ul>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2405.04152">Paper</a>
+              <a href="https://github.com/apwbs/CAKE">Code</a>
+              <a href="https://github.com/MichaelPlug/SPECK">SPECK</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="skills">
     <div class="wrap">
       <h2>Skills</h2>
@@ -514,74 +572,6 @@
           </ul>
           <a class="used-more" id="used-more" href="#experience" hidden>Read the story</a>
         </aside>
-      </div>
-    </div>
-  </section>
-
-  <section id="publications">
-    <div class="wrap">
-      <h2>Publications</h2>
-      <p class="intro">Public blockchains copy every record to every node. That's great for trust and bad for secrets. These two papers, written with researchers at Sapienza, Utrecht and TU Munich and published at CAiSE, encrypt documents so the ledger proves they exist while only the right people can read them.</p>
-      <div>
-        <article class="paper">
-          <b>MARTSIA</b>
-          <div>
-            <h3><a href="https://arxiv.org/abs/2407.10684">A Tool for Confidential Data Exchange via Public Blockchain</a></h3>
-            <span class="paper-meta">CAiSE 2025 · arXiv:2407.10684</span>
-            <p>Spreads trust across several independent authorities. Each one issues part of a decryption key and the reader puts the parts together, so no single party can unlock the data. One export document can be split so customs, the carrier and the manufacturer each read only their own part: one message instead of ten copies.</p>
-            <p>Runs on Ethereum and Algorand, and was tested with three existing apps for NFT trading, supply chain and retail.</p>
-            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Ethereum</li><li>Algorand</li></ul>
-            <div class="paper-links">
-              <a href="https://arxiv.org/abs/2407.10684">Paper</a>
-              <a href="https://github.com/apwbs/MARTSIA">Code</a>
-              <a href="https://github.com/apwbs/MARTSIA-Demo">Demo</a>
-              <a href="https://www.youtube.com/watch?v=RAcifWw1_B0">Video</a>
-            </div>
-          </div>
-        </article>
-        <article class="paper">
-          <b>CAKE</b>
-          <div>
-            <h3><a href="https://arxiv.org/abs/2405.04152">Sharing Slices of Confidential Data on Blockchain</a></h3>
-            <span class="paper-meta">CAiSE 2024 · arXiv:2405.04152</span>
-            <p>Encrypts a document, or separate parts of it, with a rule about who may read it, such as "customs on shipment 29837". The encrypted file goes to IPFS and its fingerprint goes on-chain. Only readers who match the rule get a working key.</p>
-            <p>Used in BRIE, a national cybersecurity project for import-export logistics.</p>
-            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Algorand</li><li>Docker</li></ul>
-            <div class="paper-links">
-              <a href="https://arxiv.org/abs/2405.04152">Paper</a>
-              <a href="https://github.com/apwbs/CAKE">Code</a>
-              <a href="https://github.com/MichaelPlug/SPECK">SPECK</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="wrap">
-      <h2>About</h2>
-      <div class="facts">
-        <div>
-          <h3>education</h3>
-          <ul>
-            <li><strong>Master's Degree, Computer Science</strong><small>La Sapienza, Rome · 2021–2024</small><small>110 cum laude/110</small></li>
-            <li><strong>Bachelor's Degree, Computer Science</strong><small>La Sapienza, Rome · 2017–2021</small></li>
-          </ul>
-        </div>
-        <div>
-          <h3>certification</h3>
-          <ul>
-            <li><strong>AWS Academy Graduate</strong><small>AWS Academy Cloud Foundations</small><small>Jul 2023</small></li>
-          </ul>
-        </div>
-        <div>
-          <h3>languages</h3>
-          <ul>
-            <li><strong>Italian</strong><small>Native</small></li>
-            <li><strong>English</strong><small>B1+</small></li>
-          </ul>
-        </div>
       </div>
     </div>
   </section>

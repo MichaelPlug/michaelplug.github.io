@@ -52,10 +52,10 @@
   <nav class="wrap" aria-label="Principale">
     <a class="brand" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg>Michele Spina</a>
     <ul>
-      <li><a href="#experience">Lavori</a></li>
-      <li><a href="#skills">Skill</a></li>
-      <li><a href="#publications">Articoli</a></li>
       <li><a href="#about">Chi sono</a></li>
+      <li><a href="#experience">Lavori</a></li>
+      <li><a href="#publications">Articoli</a></li>
+      <li><a href="#skills">Skill</a></li>
       <li><a href="#contact">Contatti</a></li>
     </ul>
     <a class="lang" href="../index.html?lang=en" hreflang="en" lang="en" title="Read in English"><span class="sr">Read in English</span><span aria-hidden="true">EN</span></a>
@@ -118,6 +118,24 @@
       <div><dt>Informatica, Sapienza Università di Roma</dt><dd>Magistrale, 110 e lode</dd></div>
     </dl>
   </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>Chi sono</h2>
+      <div class="about">
+        <div class="about-text">
+          <p>Software Engineer con oltre cinque anni di esperienza nello sviluppo di servizi backend scalabili, piattaforme dati enterprise e architetture Web3 per ambienti ad alta disponibilità.</p>
+          <p>In Moveax, dal 2024, progetto e sviluppo servizi in Go e Python secondo i principi dell'Architettura Esagonale e del Clean Code: data lakehouse su Iceberg e Trino, infrastrutture di tokenizzazione finanziaria su Polygon e API mission-critical.</p>
+          <p>Dal 2021 al 2024 ho lavorato come ingegnere freelance, realizzando applicazioni macOS native e strumenti di automazione dei dati per produzioni cinematografiche internazionali.</p>
+          <p>Durante la laurea magistrale ho collaborato con gruppi di ricerca della Sapienza, della Utrecht University e della TU Munich sulla condivisione riservata di dati su blockchain pubblica, come coautore di due pubblicazioni presentate a CAiSE 2024 e 2025.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>formazione</dt><dd><strong>Laurea magistrale in Informatica</strong><small>Sapienza, Roma · 2024 · 110/110 e lode</small></dd><dd><strong>Laurea triennale in Informatica</strong><small>Sapienza, Roma · 2021</small></dd></div>
+          <div><dt>lingue</dt><dd><strong>Italiano, inglese</strong></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
 
   <section id="experience">
     <div class="wrap">
@@ -387,6 +405,46 @@
     </div>
   </section>
 
+  <section id="publications">
+    <div class="wrap">
+      <h2>Pubblicazioni</h2>
+      <p class="intro">Le blockchain pubbliche copiano ogni record su ogni nodo: ottimo per la fiducia, pessimo per i segreti. Questi due articoli, scritti con ricercatori della Sapienza, di Utrecht e della TU di Monaco e pubblicati a CAiSE, cifrano i documenti in modo che il ledger ne dimostri l'esistenza, mentre solo le persone giuste possono leggerli.</p>
+      <div>
+        <article class="paper">
+          <b>MARTSIA</b>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2407.10684" lang="en">A Tool for Confidential Data Exchange via Public Blockchain</a></h3>
+            <span class="paper-meta">CAiSE 2025 · arXiv:2407.10684</span>
+            <p>Distribuisce la fiducia su più autorità indipendenti. Ognuna emette una parte della chiave di decifratura e chi legge mette insieme i pezzi, così nessun soggetto da solo può sbloccare i dati. Un documento di esportazione può essere diviso in modo che dogana, vettore e produttore leggano ciascuno solo la propria parte: un solo messaggio invece di dieci copie.</p>
+            <p>Funziona su Ethereum e Algorand, ed è stato testato con tre app esistenti per lo scambio di NFT, la supply chain e il retail.</p>
+            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Ethereum</li><li>Algorand</li></ul>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2407.10684">Articolo</a>
+              <a href="https://github.com/apwbs/MARTSIA">Codice</a>
+              <a href="https://github.com/apwbs/MARTSIA-Demo">Demo</a>
+              <a href="https://www.youtube.com/watch?v=RAcifWw1_B0">Video</a>
+            </div>
+          </div>
+        </article>
+        <article class="paper">
+          <b>CAKE</b>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2405.04152" lang="en">Sharing Slices of Confidential Data on Blockchain</a></h3>
+            <span class="paper-meta">CAiSE 2024 · arXiv:2405.04152</span>
+            <p>Cifra un documento, o sue singole parti, con una regola su chi può leggerlo, ad esempio «dogana sulla spedizione 29837». Il file cifrato va su IPFS e la sua impronta va on-chain. Solo i lettori che rispettano la regola ottengono una chiave valida.</p>
+            <p>Usato in BRIE, un progetto nazionale di cybersecurity per la logistica di import-export.</p>
+            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Algorand</li><li>Docker</li></ul>
+            <div class="paper-links">
+              <a href="https://arxiv.org/abs/2405.04152">Articolo</a>
+              <a href="https://github.com/apwbs/CAKE">Codice</a>
+              <a href="https://github.com/MichaelPlug/SPECK">SPECK</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="skills">
     <div class="wrap">
       <h2>Competenze</h2>
@@ -493,74 +551,6 @@
           </ul>
           <a class="used-more" id="used-more" href="#experience" hidden>Leggi la storia</a>
         </aside>
-      </div>
-    </div>
-  </section>
-
-  <section id="publications">
-    <div class="wrap">
-      <h2>Pubblicazioni</h2>
-      <p class="intro">Le blockchain pubbliche copiano ogni record su ogni nodo: ottimo per la fiducia, pessimo per i segreti. Questi due articoli, scritti con ricercatori della Sapienza, di Utrecht e della TU di Monaco e pubblicati a CAiSE, cifrano i documenti in modo che il ledger ne dimostri l'esistenza, mentre solo le persone giuste possono leggerli.</p>
-      <div>
-        <article class="paper">
-          <b>MARTSIA</b>
-          <div>
-            <h3><a href="https://arxiv.org/abs/2407.10684" lang="en">A Tool for Confidential Data Exchange via Public Blockchain</a></h3>
-            <span class="paper-meta">CAiSE 2025 · arXiv:2407.10684</span>
-            <p>Distribuisce la fiducia su più autorità indipendenti. Ognuna emette una parte della chiave di decifratura e chi legge mette insieme i pezzi, così nessun soggetto da solo può sbloccare i dati. Un documento di esportazione può essere diviso in modo che dogana, vettore e produttore leggano ciascuno solo la propria parte: un solo messaggio invece di dieci copie.</p>
-            <p>Funziona su Ethereum e Algorand, ed è stato testato con tre app esistenti per lo scambio di NFT, la supply chain e il retail.</p>
-            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Ethereum</li><li>Algorand</li></ul>
-            <div class="paper-links">
-              <a href="https://arxiv.org/abs/2407.10684">Articolo</a>
-              <a href="https://github.com/apwbs/MARTSIA">Codice</a>
-              <a href="https://github.com/apwbs/MARTSIA-Demo">Demo</a>
-              <a href="https://www.youtube.com/watch?v=RAcifWw1_B0">Video</a>
-            </div>
-          </div>
-        </article>
-        <article class="paper">
-          <b>CAKE</b>
-          <div>
-            <h3><a href="https://arxiv.org/abs/2405.04152" lang="en">Sharing Slices of Confidential Data on Blockchain</a></h3>
-            <span class="paper-meta">CAiSE 2024 · arXiv:2405.04152</span>
-            <p>Cifra un documento, o sue singole parti, con una regola su chi può leggerlo, ad esempio «dogana sulla spedizione 29837». Il file cifrato va su IPFS e la sua impronta va on-chain. Solo i lettori che rispettano la regola ottengono una chiave valida.</p>
-            <p>Usato in BRIE, un progetto nazionale di cybersecurity per la logistica di import-export.</p>
-            <ul class="tags"><li>Python</li><li>Solidity</li><li>PyTeal</li><li>IPFS</li><li>Algorand</li><li>Docker</li></ul>
-            <div class="paper-links">
-              <a href="https://arxiv.org/abs/2405.04152">Articolo</a>
-              <a href="https://github.com/apwbs/CAKE">Codice</a>
-              <a href="https://github.com/MichaelPlug/SPECK">SPECK</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="wrap">
-      <h2>Chi sono</h2>
-      <div class="facts">
-        <div>
-          <h3>formazione</h3>
-          <ul>
-            <li><strong>Laurea magistrale in Informatica</strong><small>La Sapienza, Roma · 2021–2024</small><small>110/110 e lode</small></li>
-            <li><strong>Laurea triennale in Informatica</strong><small>La Sapienza, Roma · 2017–2021</small></li>
-          </ul>
-        </div>
-        <div>
-          <h3>certificazione</h3>
-          <ul>
-            <li><strong>AWS Academy Graduate</strong><small>AWS Academy Cloud Foundations</small><small>Lug 2023</small></li>
-          </ul>
-        </div>
-        <div>
-          <h3>lingue</h3>
-          <ul>
-            <li><strong>Italiano</strong><small>Madrelingua</small></li>
-            <li><strong>Inglese</strong><small>B1+</small></li>
-          </ul>
-        </div>
       </div>
     </div>
   </section>

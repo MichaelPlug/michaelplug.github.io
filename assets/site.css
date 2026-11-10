@@ -749,12 +749,20 @@ html.off .tile, html.off .skills-grid.focus .hit { box-shadow: none; }
 .paper-links { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 14px; }
 .paper-links a { font: 600 14px/24px var(--sans); color: var(--accent); text-underline-offset: 4px; }
 
-/* about */
-.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: clamp(24px, 4vw, 48px); }
-.facts h3 { font: 500 13px var(--sans); color: var(--dim); margin-bottom: 12px; }
-.facts li + li { margin-top: 14px; }
+/* about: the story on the left, the record beside it */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: clamp(32px, 6vw, 80px); align-items: start; }
+.about-text p { max-width: 36em; font-size: 1.12rem; color: var(--dim); }
+.about-text p + p { margin-top: 1em; }
+.facts { padding-left: clamp(20px, 3vw, 32px); border-left: 1px solid var(--line); }
+.facts > div + div { margin-top: 28px; }
+.facts dt { font: 500 13px var(--sans); color: var(--dim); margin-bottom: 10px; }
+.facts dd + dd { margin-top: 14px; }
 .facts strong { display: block; font-weight: 500; }
 .facts small { display: block; font: 400 13.5px/1.6 var(--sans); color: var(--dim); }
+@media (max-width: 760px) {
+  .about { grid-template-columns: minmax(0, 1fr); }
+  .facts { padding: 24px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+}
 
 /* contact: the bulb lights the room */
 .contact { position: relative; overflow: hidden; isolation: isolate; text-align: center; }
