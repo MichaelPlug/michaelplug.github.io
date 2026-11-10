@@ -270,7 +270,7 @@
   }
 
   function paintWire(len) {
-    if (Math.abs(len - shown) < .25) return;
+    if (Math.abs(len - shown) < 1 && len !== total && len !== 0) return;
     shown = len;
     litPath.style.visibility = len > .5 ? 'visible' : 'hidden';
     litPath.style.strokeDasharray = len.toFixed(1) + ' ' + (total + 10).toFixed(0);
@@ -306,7 +306,7 @@
   var spark = $('#spark'), sc = spark.getContext('2d');
   var SIZE = 180, MID = SIZE / 2, ratio = Math.min(devicePixelRatio || 1, 2);
   var front = { x: 0, y: 0, on: false }, energy = 0, lastPos = null;
-  var embers = [], nextCrackle = 0, lastDraw = 0;
+  var embers = [], nextCrackle = 0, lastDraw = 0, sparking = false;
   spark.width = spark.height = SIZE * ratio;
   sc.scale(ratio, ratio);
   sc.lineCap = 'round';
@@ -320,6 +320,7 @@
     front.x = p.x;
     front.y = p.y;
     spark.style.transform = 'translate3d(' + (p.x - MID).toFixed(1) + 'px,' + (p.y - MID).toFixed(1) + 'px,0)';
+    startSpark();
   }
 
   // Current on the move: after the S strikes, when the plug goes back in, and when the
@@ -388,13 +389,30 @@
     sc.stroke(path);
   }
 
+  // The spark only animates while it is lit and on screen; otherwise the loop stops
+  // until the current moves again.
+  function startSpark() {
+    if (sparking) return;
+    sparking = true;
+    requestAnimationFrame(drawSpark);
+  }
+  function sparkInView() {
+    var y = mainTop + front.y;
+    return y > scrollY - SIZE && y < scrollY + innerHeight + SIZE;
+  }
   function drawSpark(now) {
+    if (!front.on || powerIsOff() || !sparkInView()) {
+      sc.clearRect(0, 0, SIZE, SIZE);
+      embers.length = 0;
+      sparking = false;
+      return;
+    }
     requestAnimationFrame(drawSpark);
     var dt = now - lastDraw;
     if (dt < 45) return;
     lastDraw = now;
+    dt = Math.min(dt, 90);  // after a pause, don't jump the embers
     sc.clearRect(0, 0, SIZE, SIZE);
-    if (!front.on || powerIsOff()) { embers.length = 0; return; }
 
     energy *= .82;
     if (now > nextCrackle) {
@@ -441,7 +459,6 @@
     });
     sc.globalAlpha = 1;
   }
-  requestAnimationFrame(drawSpark);
 
   // Scroll-linked: the viewfinder timecode runs and the reading point moves along the wire.
   // Timecode scrubs with the page: one frame per pixel, from 01:00:00:00 like a camera roll.

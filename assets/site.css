@@ -3,7 +3,7 @@
   color-scheme: dark;
   --bg: #101113;
   --panel: #1a1b1e;
-  --nav: rgba(16, 17, 19, .88);
+  --nav: rgba(16, 17, 19, .96);
   --ink: #f4ece1;
   --bright: #fff7ec;
   --dim: #aaa59d;
@@ -21,7 +21,7 @@
 html.off {
   --bg: #08090a;
   --panel: #121315;
-  --nav: rgba(8, 9, 10, .9);
+  --nav: rgba(8, 9, 10, .97);
   --ink: #ddd6cc;
   --bright: #e9e2d8;
   --dim: #918d86;
@@ -68,8 +68,6 @@ svg { display: block; }
 .nav {
   position: sticky; top: 0; z-index: 20;
   background: var(--nav);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: var(--nav-h); }
@@ -198,7 +196,7 @@ html.off .bulb, html.off .bulb-cap, html.off .bulb-thread, html.off .bulb-glass,
 
 /* one wire carries the sign's power: out of the S, down the margin past every section,
    round a corner and into the bulb. Lit behind the reader, with festival bulbs on the way. */
-.cable { display: none; position: absolute; z-index: 1; left: 0; top: 0; overflow: visible; pointer-events: none; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.cable { display: none; position: absolute; z-index: 1; left: 0; top: 0; overflow: visible; pointer-events: none; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; will-change: transform; }
 main.wired .cable { display: block; }
 .cable-dark { stroke: #3a3c41; }
 .cable-lit { stroke: #e8a23f; }
@@ -241,6 +239,7 @@ html.off .hero::before { opacity: 0; }
 }
 html.off .portrait::before { opacity: 0; }
 .print { border-radius: 50%; box-shadow: 0 20px 50px rgba(0, 0, 0, .45); }
+.print picture { display: block; }
 .print img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; transition: filter .25s; }
 html.off .print img { filter: brightness(.38) saturate(.7); }
 h1 {
